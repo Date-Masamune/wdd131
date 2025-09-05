@@ -57,22 +57,31 @@ body {
 
 }
 
+
+#course-title,
 .site-title {
+    display: block;
     margin: 0;
-    padding: 14px 20px;
+    padding: 12px 20px;
     background: var(--header-bg);
     color: var(--text);
     text-align: center;
     font-family: var(--heading-font);
     font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.site-title {
+    font-size: 1.8rem;
     letter-spacing: 3px;
 }
 
 #course-title {
-    display: block;
-    font-weight: 700;
-}
+    font-size: 1.2rem;
+    opacity: 0.9;
 
+}
 
 .navigation {
     display: flex;
@@ -263,4 +272,3 @@ footer a {
 
 
 }
-
