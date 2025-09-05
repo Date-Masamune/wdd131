@@ -2,11 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Jacob Gishwiller, Home Page">
-    <meta name="author" content="Jacob Gishwiller">
-    <link rel="stylesheet" href="styles/base.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Jacob Gishwiller, Home Page" />
+    <meta name="author" content="Jacob Gishwiller" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@700;800&display=swap"
+        rel="stylesheet">
     <title>WDD 131 - Dynamic Web Fundamentals - Jacob Gishwiller</title>
 </head>
 
@@ -17,70 +22,79 @@
                 <h1 class="site-title">
                     <span id="course-title">WDD 131 - Dynamic Web Fundamentals - Jacob Gishwiller</span>
                 </h1>
-                <nav>
+                <nav aria-label="Primary">
                     <ul class="navigation">
                         <li><a href="https://www.linkedin.com/feed/">LinkedIn</a></li>
                         <li><a href="https://byupw.instructure.com/">Canvas</a></li>
-                        <li><a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc-88/63?lang=eng&id=p7#p7">Scripture</a></li>
+                        <li><a
+                                href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc-88/63?lang=eng&id=p7#p7">Scripture</a>
+                        </li>
                         <li><a href="">Final Project</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <main>
-            <section class="card about" aria-labelledby="about-title">
-                <h1 id="about-title" class="card-title">Jacob Gishwiller</h1>
-                <div class="about-intro">
-                <p>Hello! My name is Jacob Gishwiller, I grew up in Nebraska but currently live in the state of Utah.
-                    I am currently working towards moving back to Nebraska. Having grown up in tornado alley I have
-                    found
-                    a lot of interest in weather and am currently studying it as a hobby and I am a storm chaser. I am
-                    studying
-                    software developement through Byu Pathways and plan to eventually also study meteorology at UNL. I
-                    also love
-                    traveling and learning new things. I dream to be a full time storm chaser someday and to have a
-                    family of my own.
-                </p>
-                <img class="portrait" src="images/profile.jpg" alt="Hello my name is Jacob" width="200">
-                </div>
-            </section>
-            <section class="card" aria-labelledby="nebraska-title">
-                <h2 id="nebraska-title" class="card-title">Nebraska, USA</h2>
-                <div class="location">
-                    <figure class="flag">
-                        <img src="images/Flag_of_Nebraska.png" alt="Flag_of_Nebraska" width="200">
-                        <figcaption>Official Flag of Nebraska</figcaption>
-                </figure>
-                <P>Nebraska is the 37th state, it was admitted into the union on March 1, 1867. It is landlocked state
-                    in th Midwest ans is borderd by South Dakota to the North, Kansas to the South, Wyoming and Colorado
-                    to the west,
-                    Missouri and Iowa to the east. It is the 16th largest state by land area with a population over 2
-                    million. It is
-                    primarily and agriculture and cattle ranch state. It is part of tornado alley where it has severe
-                    storms and on
-                    average there are 30=50 tornados a year. Some cool facts about Nebraska is it is the birthplace of
-                    Kool-aid, and has
-                    one of the highest rated zoo's in the USA in the city of Omaha, it also know for Chimney Rock and
-                    Carhenge. It is also
-                    know for the Runza which dates back to the Germanic settlers.
-                </P>
-                </div>
-            </section>
-        </main>
-        <section class="sidebar card">
-            <h2 class="card-title">Weather Resources</h2>
-            <ul class="linklist">
-                <li><a href="https://www.spc.noaa.gov/">Storm Prediction Center</a></li>
-                <li><a href="https://www.weather.gov/oax/">NWS Omaha</a></li>
-                <li><a href="https://home.pivotalweather.com/">Pivotal Weather</a></li>
-                <li><a href="https://www.weather.gov/oax/">NWS Omaha</a></li>
-                <li><a href="https://www.ryanhallyall.com/">Ryan Hall Y'all</a></li>
-                <li><a href="https://www.cpc.ncep.noaa.gov/">Climate Prediction Center</a></li>
-                <li><a href="https://www.wpc.ncep.noaa.gov/index.shtml#page=ovw">Weather Prediction Center</a></li>
-            </ul>
-        </section>
+
+        <div class="content-wrap">
+            <main>
+                <section class="card about" aria-labelledby="about-title">
+                    <h2 id="about-title" class="card-title">About Me</h2>
+                    <div class="about-intro">
+                        <p>Hello! My name is Jacob Gishwiller, I grew up in Nebraska but currently live in the state of
+                            Utah. I am currently working towards moving back to Nebraska. Having grown up in tornado
+                            alley I have found a lot of interest in weather and am currently studying it as a hobby and
+                            I am a storm chaser. I am studying software development through BYU Pathway and plan to
+                            eventually also study meteorology at UNL. I also love traveling and learning new things. I
+                            dream to be a full time storm chaser someday and to have a family of my own.</p>
+                        <img class="portrait" src="images/profile.jpg" alt="Portrait of Jacob Gishwiller" />
+                    </div>
+                </section>
+
+                <section class="card" aria-labelledby="nebraska-title">
+                    <h2 id="nebraska-title" class="card-title">Nebraska, USA</h2>
+                    <div class="location">
+                        <figure class="flag">
+                            <img src="images/Flag_of_Nebraska.png" alt="Official Flag of Nebraska" />
+                            <figcaption>Official Flag of Nebraska</figcaption>
+                        </figure>
+                        <p>Nebraska is the 37th state, it was admitted into the union on March 1, 1867. It is landlocked
+                            state
+                            in th Midwest ans is borderd by South Dakota to the North, Kansas to the South, Wyoming and
+                            Colorado
+                            to the west,
+                            Missouri and Iowa to the east. It is the 16th largest state by land area with a population
+                            over 2
+                            million. It is
+                            primarily and agriculture and cattle ranch state. It is part of tornado alley where it has
+                            severe
+                            storms and on
+                            average there are 30=50 tornados a year. Some cool facts about Nebraska is it is the
+                            birthplace of
+                            Kool-aid, and has
+                            one of the highest rated zoo's in the USA in the city of Omaha, it also know for Chimney
+                            Rock and
+                            Carhenge. It is also
+                            know for the Runza which dates back to the Germanic settlers.</p>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="sidebar card" aria-labelledby="resources-title">
+                <h2 id="resources-title" class="card-title">Weather Resources</h2>
+                <ul class="linklist">
+                    <li><a href="https://www.spc.noaa.gov/">Storm Prediction Center</a></li>
+                    <li><a href="https://www.weather.gov/oax/">NWS Omaha</a></li>
+                    <li><a href="https://home.pivotalweather.com/">Pivotal Weather</a></li>
+                    <li><a href="https://www.ryanhallyall.com/">Ryan Hall Y'all</a></li>
+                    <li><a href="https://www.cpc.ncep.noaa.gov/">Climate Prediction Center</a></li>
+                    <li><a href="https://www.wpc.ncep.noaa.gov/index.shtml#page=ovw">Weather Prediction Center</a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- Keep footer inside container (recommended) -->
         <footer>
-            <p><span id="currentyear"></span>🌪 Jacob Gishwiller 🌪, USA, Utah</p>
+            <p><span id="currentyear"></span> 🌪 Jacob Gishwiller 🌪, USA, Utah</p>
             <p id="lastModified"></p>
         </footer>
     </div>
