@@ -9,7 +9,6 @@
     --body-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -55,7 +54,6 @@ body {
     margin: 0 auto;
     border-radius: 6px;
     overflow: hidden;
-   
 }
 
 
@@ -72,9 +70,7 @@ body {
     align-items: baseline;
     gap: .75rem;
     flex-wrap: wrap;
-  
 }
-
 
 .header-top #course-title {
     font-size: 1.125rem;
@@ -82,7 +78,8 @@ body {
     letter-spacing: .5px;
 }
 
-.header-top .site-title {
+
+.header-top h1 {
     margin: 0;
     font-size: 1.45rem;
     letter-spacing: 1px;
@@ -90,7 +87,7 @@ body {
 
 
 .site-header>#course-title,
-.site-header>.site-title {
+.site-header>h1 {
     display: block;
     margin: 0 auto;
     max-width: var(--maxw);
@@ -103,13 +100,12 @@ body {
     letter-spacing: 2px;
 }
 
-
 .site-header>#course-title {
     font-size: 1.2rem;
     opacity: .9;
 }
 
-.site-header>.site-title {
+.site-header>h1 {
     font-size: 1.8rem;
     letter-spacing: 3px;
 }
@@ -141,7 +137,6 @@ body {
     text-decoration: underline;
     opacity: .9;
 }
-
 
 .header-wrap .navigation {
     border-radius: 0 0 6px 6px;
@@ -204,6 +199,7 @@ main p {
     height: auto;
     border-radius: 4px;
 }
+
 
 .subhead {
     margin: 1rem 1.25rem .75rem;
@@ -310,7 +306,9 @@ footer a {
         row-gap: .25rem;
     }
 
-    .site-title {
+
+    .site-header h1,
+    .header-top h1 {
         flex-basis: 100%;
     }
 }
