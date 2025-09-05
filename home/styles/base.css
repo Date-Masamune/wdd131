@@ -1,4 +1,5 @@
 :root {
+    --teal: #38808d;
     --header-bg: #1f4f74;
     --nav-bg: #3b3f46;
     --text: #ffffff;
@@ -43,7 +44,7 @@ body {
 
 
 .site-header {
-    background: #5eb1bf;
+    background: var(--teal);
     color: #fff;
     padding: 12px 0;
 }
@@ -113,7 +114,6 @@ body {
 main {
     background: transparent;
 }
-
 
 .card {
     background: #fff;
@@ -227,12 +227,17 @@ main p {
 
 
 footer {
-    background: #5eb1bf;
+    background: var(--teal);
     color: #fff;
     text-align: center;
     padding: 3rem 1.5rem;
     font-family: var(--heading-font);
     font-weight: 700;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
 }
 
 
@@ -241,7 +246,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* stack */
+
     .about-intro {
         grid-template-columns: 1fr;
     }
@@ -258,6 +263,7 @@ footer {
 
 
 }
+
 
 
 .card:nth-of-type(n+2),
