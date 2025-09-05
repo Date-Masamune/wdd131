@@ -54,7 +54,7 @@ body {
     margin: 0 auto;
     border-radius: 6px;
     overflow: hidden;
- 
+
 }
 
 .site-title {
@@ -152,6 +152,7 @@ main p {
 }
 
 .portrait {
+    aspect-ratio: 1 / 1;
     width: 200px;
     height: auto;
     border-radius: 4px;
@@ -179,6 +180,7 @@ main p {
 }
 
 .flag img {
+    aspect-ratio: 110 / 73;
     width: 110px;
     height: auto;
 }
@@ -236,12 +238,12 @@ footer {
 @media (max-width: 840px) {
     .content-wrap {
         grid-template-columns: 1fr;
-        
+
     }
 
     .about-intro {
         grid-template-columns: 1fr;
-        
+
     }
 
     .navigation {
@@ -253,5 +255,5 @@ footer {
         flex: 1 1 45%;
     }
 
-    
+
 }
