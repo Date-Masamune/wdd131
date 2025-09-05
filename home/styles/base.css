@@ -264,12 +264,3 @@ footer a {
 
 }
 
-@supports (content-visibility: auto) {
-
-    
-    .card~.card,
-    .sidebar.card {
-        content-visibility: auto;
-        contain-intrinsic-size: 700px;
-    }
-}
