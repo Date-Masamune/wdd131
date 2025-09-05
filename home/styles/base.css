@@ -1,14 +1,12 @@
-/* ===== Theme, Fonts, Reset ===== */
 :root {
     --header-bg: #1f4f74;
-    /* blue bars */
     --nav-bg: #3b3f46;
-    /* dark nav strip */
     --text: #ffffff;
     --maxw: 1100px;
 
     --heading-font: "Raleway", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --body-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
 }
 
 * {
@@ -34,6 +32,7 @@ img {
 
 body {
     font-family: var(--body-font);
+    font-weight: 400;
     color: #1c1c1c;
 }
 
@@ -63,14 +62,14 @@ body {
     background: var(--header-bg);
     color: var(--text);
     text-align: center;
-    font-weight: 800;
-    letter-spacing: 3px;
     font-family: var(--heading-font);
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
 #course-title {
     display: block;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 
@@ -89,8 +88,9 @@ body {
 .navigation a {
     display: block;
     padding: .6rem 0;
-    font-weight: 600;
     color: var(--text);
+    font-family: var(--body-font);
+    font-weight: 600;
     outline-offset: 3px;
 }
 
@@ -99,6 +99,7 @@ body {
     text-decoration: underline;
     opacity: .9;
 }
+
 
 .content-wrap {
     max-width: var(--maxw);
@@ -129,8 +130,8 @@ main {
     background: var(--header-bg);
     color: #fff;
     text-align: center;
-    font-weight: 700;
     font-family: var(--heading-font);
+    font-weight: 700;
 }
 
 .card>*:not(.card-title) {
@@ -141,6 +142,7 @@ main {
 main p {
     line-height: 1.65;
     font-size: 1.05rem;
+    font-weight: 400;
 }
 
 
@@ -152,7 +154,6 @@ main p {
 }
 
 .portrait {
-    aspect-ratio: 1 / 1;
     width: 200px;
     height: auto;
     border-radius: 4px;
@@ -161,10 +162,10 @@ main p {
 
 .subhead {
     margin: 1rem 1.25rem .75rem;
-    font-weight: 800;
+    font-family: var(--heading-font);
+    font-weight: 700;
     border-bottom: 2px solid #e5e5e5;
     padding-bottom: .4rem;
-    font-family: var(--heading-font);
 }
 
 
@@ -180,7 +181,6 @@ main p {
 }
 
 .flag img {
-    aspect-ratio: 110 / 73;
     width: 110px;
     height: auto;
 }
@@ -232,19 +232,20 @@ footer {
     text-align: center;
     padding: 3rem 1.5rem;
     font-family: var(--heading-font);
+    font-weight: 700;
 }
 
 
 @media (max-width: 840px) {
     .content-wrap {
         grid-template-columns: 1fr;
-
     }
 
+    /* stack */
     .about-intro {
         grid-template-columns: 1fr;
-
     }
+
 
     .navigation {
         flex-wrap: wrap;
@@ -255,5 +256,13 @@ footer {
         flex: 1 1 45%;
     }
 
+
+}
+
+
+.card:nth-of-type(n+2),
+.sidebar.card {
+    content-visibility: auto;
+    contain-intrinsic-size: 700px;
 
 }
