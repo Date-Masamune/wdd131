@@ -264,11 +264,12 @@ footer a {
 
 }
 
+@supports (content-visibility: auto) {
 
-
-.card:nth-of-type(n+2),
-.sidebar.card {
-    content-visibility: auto;
-    contain-intrinsic-size: 700px;
-
+    
+    .card~.card,
+    .sidebar.card {
+        content-visibility: auto;
+        contain-intrinsic-size: 700px;
+    }
 }
