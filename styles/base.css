@@ -9,6 +9,7 @@
     --body-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Reset / base */
 * {
     margin: 0;
     padding: 0;
@@ -41,13 +42,12 @@ body {
     min-height: 100vh;
 }
 
-
+/* HEADER */
 .site-header {
     background: var(--teal);
     color: var(--text);
     padding: 12px 0;
 }
-
 
 .header-wrap {
     max-width: var(--maxw);
@@ -56,38 +56,8 @@ body {
     overflow: hidden;
 }
 
-
-.header-top {
-    background: var(--header-bg);
-    color: var(--text);
-    text-align: center;
-    padding: 12px 20px;
-    font-family: var(--heading-font);
-    font-weight: 700;
-
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: .75rem;
-    flex-wrap: wrap;
-}
-
-.header-top #course-title {
-    font-size: 1.125rem;
-    opacity: .95;
-    letter-spacing: .5px;
-}
-
-
-.header-top h1 {
-    margin: 0;
-    font-size: 1.45rem;
-    letter-spacing: 1px;
-}
-
-
-.site-header>#course-title,
-.site-header>h1 {
+/* Course title stays in the header */
+.site-header>#course-title {
     display: block;
     margin: 0 auto;
     max-width: var(--maxw);
@@ -98,19 +68,11 @@ body {
     font-family: var(--heading-font);
     font-weight: 700;
     letter-spacing: 2px;
-}
-
-.site-header>#course-title {
     font-size: 1.2rem;
     opacity: .9;
 }
 
-.site-header>h1 {
-    font-size: 1.8rem;
-    letter-spacing: 3px;
-}
-
-
+/* NAV */
 .navigation {
     display: flex;
     background: var(--nav-bg);
@@ -142,7 +104,7 @@ body {
     border-radius: 0 0 6px 6px;
 }
 
-
+/* LAYOUT */
 .content-wrap {
     max-width: var(--maxw);
     margin: 1rem auto;
@@ -156,7 +118,24 @@ main {
     background: transparent;
 }
 
+/* ✨ Name now lives in <main> per rubric */
+main>h1 {
+    max-width: var(--maxw);
+    margin: 0 auto 1rem;
+    padding: 12px 20px;
+    text-align: center;
 
+    font-family: var(--heading-font);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+
+    /* keep the same visual bar style as before */
+    background: var(--header-bg);
+    color: var(--text);
+}
+
+/* CARDS */
 .card {
     background: #fff;
     border: 1px solid #d6d6d6;
@@ -186,7 +165,7 @@ main p {
     font-weight: 400;
 }
 
-
+/* ABOUT BLOCK */
 .about-intro {
     display: grid;
     grid-template-columns: 1fr 200px;
@@ -200,7 +179,7 @@ main p {
     border-radius: 4px;
 }
 
-
+/* SUBHEAD */
 .subhead {
     margin: 1rem 1.25rem .75rem;
     font-family: var(--heading-font);
@@ -209,7 +188,7 @@ main p {
     padding-bottom: .4rem;
 }
 
-
+/* LOCATION BLOCK */
 .location {
     display: grid;
     grid-template-columns: 110px 1fr;
@@ -233,7 +212,7 @@ main p {
     color: #555;
 }
 
-
+/* SIDEBAR */
 .sidebar {
     background: #fff;
     border: 1px solid #d6d6d6;
@@ -266,7 +245,7 @@ main p {
     text-decoration: none;
 }
 
-
+/* FOOTER */
 footer {
     background: var(--teal);
     color: #fff;
@@ -281,7 +260,7 @@ footer a {
     text-decoration: underline;
 }
 
-
+/* RESPONSIVE */
 @media (max-width: 840px) {
     .content-wrap {
         grid-template-columns: 1fr;
@@ -302,13 +281,8 @@ footer a {
 }
 
 @media (max-width: 700px) {
-    .header-top {
-        row-gap: .25rem;
-    }
-
-
-    .site-header h1,
-    .header-top h1 {
-        flex-basis: 100%;
+    main>h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
     }
 }
