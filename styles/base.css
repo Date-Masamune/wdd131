@@ -9,7 +9,7 @@
     --body-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Reset / base */
+
 * {
     margin: 0;
     padding: 0;
@@ -42,7 +42,7 @@ body {
     min-height: 100vh;
 }
 
-/* HEADER */
+
 .site-header {
     background: var(--teal);
     color: var(--text);
@@ -56,7 +56,7 @@ body {
     overflow: hidden;
 }
 
-/* Course title stays in the header */
+
 .site-header>#course-title {
     display: block;
     margin: 0 auto;
@@ -72,7 +72,7 @@ body {
     opacity: .9;
 }
 
-/* NAV */
+
 .navigation {
     display: flex;
     background: var(--nav-bg);
@@ -104,7 +104,7 @@ body {
     border-radius: 0 0 6px 6px;
 }
 
-/* LAYOUT */
+
 .content-wrap {
     max-width: var(--maxw);
     margin: 1rem auto;
@@ -118,10 +118,10 @@ main {
     background: transparent;
 }
 
-/* ✨ Name now lives in <main> per rubric */
+
 main>h1 {
     max-width: var(--maxw);
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.25rem;
     padding: 12px 20px;
     text-align: center;
 
@@ -130,12 +130,12 @@ main>h1 {
     letter-spacing: 2px;
     font-size: 1.8rem;
 
-    /* keep the same visual bar style as before */
+    
     background: var(--header-bg);
     color: var(--text);
 }
 
-/* CARDS */
+
 .card {
     background: #fff;
     border: 1px solid #d6d6d6;
@@ -165,7 +165,7 @@ main p {
     font-weight: 400;
 }
 
-/* ABOUT BLOCK */
+
 .about-intro {
     display: grid;
     grid-template-columns: 1fr 200px;
@@ -178,8 +178,6 @@ main p {
     height: auto;
     border-radius: 4px;
 }
-
-/* SUBHEAD */
 .subhead {
     margin: 1rem 1.25rem .75rem;
     font-family: var(--heading-font);
@@ -188,7 +186,7 @@ main p {
     padding-bottom: .4rem;
 }
 
-/* LOCATION BLOCK */
+
 .location {
     display: grid;
     grid-template-columns: 110px 1fr;
