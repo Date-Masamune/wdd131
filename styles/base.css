@@ -85,14 +85,6 @@ body {
     text-align: center;
 }
 
-.navigation a {
-    display: block;
-    padding: .6rem 0;
-    color: var(--text);
-    font-family: var(--body-font);
-    font-weight: 600;
-    outline-offset: 3px;
-}
 
 .navigation a:hover,
 .navigation a:focus-visible {
