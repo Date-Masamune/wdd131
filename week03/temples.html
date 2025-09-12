@@ -7,7 +7,7 @@
     <meta name="author" content="Jacob Gishwiller">
     <meta name="description" content="WDD 131 - Dynamic Web development- Jacob Gishwiller, Picture Album">
     <link rel="stylesheet" href="styles/temples.css">
-    <link rel="stylesheet" href="styles/temples-large.css">
+    <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 900px)">
     <script src="scripts/temples.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,8 @@
 <body>
     <header class="site-header">
         <span class="brand">Temple Album</span>
+        <input id="nav-toggle" type="checkbox" class="nav-toggle" aria-label="Open menu">
+        <label for="nav-toggle" class="menu-icon" aria-hidden="true">☰</label>
         <nav>
             <ul class="navigation">
                 <li><a href="#">Home</a></li>
@@ -33,42 +35,42 @@
     <main>
         <h1>Home</h1>
         <section class="gallery">
-        <figure>
-            <img src="images/manila-philippines-temple.jpg" alt="Manila Philippines">
-            <figcaption>Manila Philippines</figcaption>
-        </figure>
-        <figure>
-            <img src="images/bountiful-temple.jpg" alt="Bountiful Utah">
-            <figcaption>Bountiful Utah</figcaption>
-        </figure>
-        <figure>
-            <img src="images/osaka-japan-temple.jpg" alt="Osaka Japan">
-            <figcaption>Osaka Japan</figcaption>
-        </figure>
-        <figure>
-            <img src="images/sapporo-japan.jpg" alt="Sapporo Japan">
-            <figcaption>Sapporo Japan</figcaption>
-        </figure>
-        <figure>
-            <img src="images/winter-quarters-nebraska-temple.jpg" alt="Winter Quarters Nebraska">
-            <figcaption>Winter Quarters Nebraska</figcaption>
-        </figure>
-        <figure>
-            <img src="images/billings-Montana-Temple.jpg" alt="Billings Montana">
-            <figcaption>Billings Montana</figcaption>
-        </figure>
-        <figure>
-            <img src="images/idaho-Falls-Temple.jpg" alt="Idaho Falls">
-            <figcaption>Idaho Falls Idaho</figcaption>
-        </figure>
-        <figure>
-            <img src="images/laie-temple.jpg" alt="Laie Hawaii">
-            <figcaption>Laie Hawaii</figcaption>
-        </figure>
-        <figure>
-            <img src="images/bern-switzerland-temple.jpg" alt="Bern Switzerland">
-            <figcaption>Bern Switzerland</figcaption>
-        </figure>
+            <figure>
+                <img src="images/manila-philippines-temple.jpg" alt="Manila Philippines">
+                <figcaption>Manila Philippines</figcaption>
+            </figure>
+            <figure>
+                <img src="images/bountiful-temple.jpg" alt="Bountiful Utah">
+                <figcaption>Bountiful Utah</figcaption>
+            </figure>
+            <figure>
+                <img src="images/osaka-japan-temple.jpg" alt="Osaka Japan">
+                <figcaption>Osaka Japan</figcaption>
+            </figure>
+            <figure>
+                <img src="images/sapporo-japan.jpg" alt="Sapporo Japan">
+                <figcaption>Sapporo Japan</figcaption>
+            </figure>
+            <figure>
+                <img src="images/winter-quarters-nebraska-temple.jpg" alt="Winter Quarters Nebraska">
+                <figcaption>Winter Quarters Nebraska</figcaption>
+            </figure>
+            <figure>
+                <img src="images/billings-Montana-Temple.jpg" alt="Billings Montana">
+                <figcaption>Billings Montana</figcaption>
+            </figure>
+            <figure>
+                <img src="images/idaho-Falls-Temple.jpg" alt="Idaho Falls">
+                <figcaption>Idaho Falls Idaho</figcaption>
+            </figure>
+            <figure>
+                <img src="images/laie-temple.jpg" alt="Laie Hawaii">
+                <figcaption>Laie Hawaii</figcaption>
+            </figure>
+            <figure>
+                <img src="images/bern-switzerland-temple.jpg" alt="Bern Switzerland">
+                <figcaption>Bern Switzerland</figcaption>
+            </figure>
         </section>
     </main>
     <footer>
