@@ -83,7 +83,7 @@
 .page>h1,
 main>h1 {
     max-width: calc(3 * var(--card) + 2 * var(--g));
-    margin: 1rem auto 1.5rem;
+    margin: 1rem auto .5rem;
     text-align: center;
 }
 
@@ -91,8 +91,9 @@ main>h1 {
     text-align: center;
     font-family: var(--font-heading);
     font-size: 1.25rem;
-    margin: .25rem 0 1rem;
+    margin: .25rem auto 1.25rem;
     color: #333;
+    max-width: calc(3 * var(--card) + 2 * var(--g));
 }
 
 .subcount {
@@ -106,6 +107,7 @@ main>h1 {
     display: grid;
     grid-template-columns: repeat(3, var(--card));
     justify-content: center;
+    align-items: start;
     gap: var(--g);
     max-width: calc(3 * var(--card) + 2 * var(--g));
     margin: 0 auto 2rem;
@@ -120,6 +122,8 @@ main>h1 {
     border-radius: 16px;
     background: #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery img {
@@ -139,9 +143,4 @@ main>h1 {
 main {
     display: grid;
     grid-template-columns: 1fr;
-}
-
-/* validator-safe CLS guard for below-the-fold figures */
-.gallery figure:nth-child(n+3) {
-    min-height: 350px;
 }
