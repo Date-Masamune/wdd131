@@ -3,8 +3,16 @@
     --g: 3rem;
     --nav-bg: #264653;
     --nav-text: #fff;
-    --font-heading: 'Merriweather', serif;
-    --font-body: 'Open Sans', sans-serif;
+    --font-heading: "Merriweather", Georgia, "Times New Roman", serif;
+    --font-body: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+.brand,
+.navigation a,
+.page>h1,
+.gallery figcaption {
+    line-height: 1.2;
 }
 
 
