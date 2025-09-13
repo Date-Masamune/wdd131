@@ -158,3 +158,22 @@ footer a {
         border: none;
     }
 }
+
+
+@media (max-width: 899.98px) {
+    .gallery figure {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .gallery img {
+        display: block;
+        width: 100% !important;
+        max-width: 520px;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        object-fit: contain !important;
+        border-radius: 12px;
+        margin: 0 auto .5rem;
+    }
+}
