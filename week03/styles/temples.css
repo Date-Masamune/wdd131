@@ -32,11 +32,6 @@ body {
     line-height: 1;
 }
 
-.nav-toggle {
-    position: absolute;
-    left: -9999px;
-}
-
 .menu-icon {
     font-size: 1.6rem;
     line-height: 1;
@@ -44,12 +39,14 @@ body {
     cursor: pointer;
     user-select: none;
     padding: .25rem .5rem;
+    background: none;
+    border: none;
 }
 
 .nav {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 64px;
     right: 0;
     width: 240px;
     background: var(--nav-bg);
@@ -57,7 +54,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, .15);
 }
 
-.nav-toggle:checked~.nav {
+.nav.open {
     display: block;
 }
 
@@ -135,4 +132,17 @@ footer {
 footer a {
     color: #fff;
     text-decoration: underline;
+}
+
+@media (min-width: 900px) {
+    .menu-icon {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+        position: static;
+        width: auto;
+        border: none;
+    }
 }
