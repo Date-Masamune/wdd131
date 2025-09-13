@@ -103,6 +103,8 @@
         border-radius: 12px;
         display: block;
         margin-bottom: .75rem;
+        aspect-ratio: 4/3;
+        /* keeps card height stable while loading */
     }
 
     .gallery figcaption {
