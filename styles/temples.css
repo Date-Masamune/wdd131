@@ -89,6 +89,19 @@ body {
 }
 
 
+.subhead {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin: .25rem 0 1rem;
+    color: #333;
+}
+
+.subcount {
+    font-weight: 700;
+    margin-left: .25rem;
+}
+
 .page {
     display: grid;
     justify-content: center;
@@ -169,9 +182,3 @@ footer a {
     }
 }
 
-
-.gallery figure:nth-child(n+3) {
-    content-visibility: auto;
-    contain-intrinsic-size: 780px 520px;
-
-}

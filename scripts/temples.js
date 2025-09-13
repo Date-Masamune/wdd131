@@ -1,4 +1,3 @@
-// Year + Last Modified
 (() => {
     const yearEl = document.getElementById('currentyear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -16,40 +15,47 @@
     }
 })();
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const menuButton = document.querySelector(".menu-icon");
     const nav = document.querySelector(".site-header nav");
     const mq = window.matchMedia("(min-width: 900px)");
 
-    if (!menuButton || !nav) return;
+    if (menuButton && nav) {
+        function setButton(open) {
+            menuButton.textContent = open ? "✖" : "☰";
+            menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+            menuButton.setAttribute("aria-expanded", String(open));
+        }
 
-    function setButton(isOpen) {
-        menuButton.textContent = isOpen ? "✖" : "☰";
-        menuButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-        menuButton.setAttribute("aria-expanded", String(isOpen));
+        function closeMenu() {
+            nav.classList.remove("open");
+            setButton(false);
+        }
+
+        setButton(nav.classList.contains("open"));
+
+        menuButton.addEventListener("click", () => {
+            const open = !nav.classList.contains("open");
+            nav.classList.toggle("open", open);
+            setButton(open);
+        });
+
+        nav.addEventListener("click", (e) => {
+            if (e.target.closest("a")) closeMenu();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeMenu();
+        });
+
+        mq.addEventListener("change", (e) => {
+            if (e.matches) closeMenu();
+        });
     }
 
-    function closeMenu() {
-        nav.classList.remove("open");
-        setButton(false);
+    const countSpan = document.getElementById("gallery-count");
+    if (countSpan) {
+        const n = document.querySelectorAll(".gallery > figure").length;
+        countSpan.textContent = `(${n})`;
     }
-
-    menuButton.addEventListener("click", () => {
-        const isOpen = !nav.classList.contains("open");
-        nav.classList.toggle("open", isOpen);
-        setButton(isOpen);
-    });
-
-    nav.addEventListener("click", (e) => {
-        if (e.target.closest("a")) closeMenu();
-    });
-
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMenu();
-    });
-
-    mq.addEventListener("change", (e) => {
-        if (e.matches) closeMenu();
-    });
 });
