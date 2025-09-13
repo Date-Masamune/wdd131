@@ -1,3 +1,12 @@
+:root {
+    --card: 350px;
+    --g: 3rem;
+    --nav-bg: #264653;
+    --nav-text: #fff;
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
 .site-header {
     position: sticky;
     top: 0;
@@ -22,9 +31,11 @@
     line-height: 1;
 }
 
-.nav {
-    margin-left: auto;
+.site-header nav {
     display: block;
+    position: static;
+    width: auto;
+    border: 0;
 }
 
 .navigation {
@@ -33,10 +44,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-.navigation li {
-    border: 0;
 }
 
 .navigation a {
@@ -61,7 +68,7 @@
 }
 
 .page {
-    max-width: 1100px;
+    max-width: calc(3 * var(--card) + 2 * var(--g));
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -69,24 +76,34 @@
 
 main>h1,
 .page>h1 {
-    max-width: 1200px;
+    max-width: calc(3 * var(--card) + 2 * var(--g));
     margin: 1rem auto 1.5rem;
     text-align: center;
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    gap: 2.25rem;
-    max-width: 1200px;
-    margin: 0 auto 2rem;
+    grid-template-columns: repeat(3, var(--card));
     justify-content: center;
-    justify-items: center;
+    gap: var(--g);
+    max-width: calc(3 * var(--card) + 2 * var(--g));
+    margin: 0 auto 2rem;
+}
+
+.gallery figure {
+    width: var(--card);
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
 }
 
 .gallery img {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: var(--card);
     object-fit: cover;
     border-radius: 12px;
     display: block;
@@ -101,15 +118,4 @@ main>h1,
 main {
     display: grid;
     grid-template-columns: 1fr;
-}
-
-@media (min-width: 1200px) {
-    .gallery img {
-        width: 350px;
-        height: 350px;
-    }
-
-    .gallery {
-        gap: 2.5rem;
-    }
 }

@@ -44,8 +44,7 @@ body {
     border: none;
 }
 
-.site-header nav,
-.nav {
+.site-header nav {
     display: none;
     position: absolute;
     top: 64px;
@@ -56,8 +55,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, .15);
 }
 
-.site-header nav.open,
-.nav.open {
+.site-header nav.open {
     display: block;
 }
 
@@ -100,13 +98,19 @@ main>h1 {
     margin: 0 0 2rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
     justify-items: center;
 }
 
 .gallery figure {
+    width: 100%;
     margin: 0;
     text-align: center;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
 }
 
 .gallery img {
@@ -135,18 +139,4 @@ footer {
 footer a {
     color: #fff;
     text-decoration: underline;
-}
-
-@media (min-width: 900px) {
-    .menu-icon {
-        display: none;
-    }
-
-    .site-header nav,
-    .nav {
-        display: block;
-        position: static;
-        width: auto;
-        border: none;
-    }
 }
