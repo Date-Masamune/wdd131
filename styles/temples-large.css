@@ -141,7 +141,7 @@ main {
     grid-template-columns: 1fr;
 }
 
-
+/* validator-safe CLS guard for below-the-fold figures */
 .gallery figure:nth-child(n+3) {
     min-height: 350px;
 }
