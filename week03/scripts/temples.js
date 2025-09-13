@@ -1,3 +1,4 @@
+// Year + Last Modified
 (() => {
     const yearEl = document.getElementById('currentyear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -18,7 +19,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const menuButton = document.querySelector(".menu-icon");
-    const nav = document.querySelector(".nav");
+    const nav = document.querySelector(".site-header nav");
     const mq = window.matchMedia("(min-width: 900px)");
 
     if (!menuButton || !nav) return;

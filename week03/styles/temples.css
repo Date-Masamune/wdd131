@@ -15,6 +15,7 @@ body {
 
 .site-header {
     position: relative;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,6 +44,7 @@ body {
     border: none;
 }
 
+.site-header nav,
 .nav {
     display: none;
     position: absolute;
@@ -54,6 +56,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, .15);
 }
 
+.site-header nav.open,
 .nav.open {
     display: block;
 }
@@ -139,6 +142,7 @@ footer a {
         display: none;
     }
 
+    .site-header nav,
     .nav {
         display: block;
         position: static;
