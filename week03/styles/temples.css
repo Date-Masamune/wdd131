@@ -153,6 +153,9 @@ footer a {
 }
 
 
+
+
+
 @media (min-width:900px) {
     .menu-icon {
         display: none;
@@ -164,4 +167,11 @@ footer a {
         width: auto;
         border: none;
     }
+}
+
+
+.gallery figure:nth-child(n+3) {
+    content-visibility: auto;
+    contain-intrinsic-size: 780px 520px;
+
 }

@@ -129,3 +129,10 @@ main {
     display: grid;
     grid-template-columns: 1fr;
 }
+
+
+.gallery figure:nth-child(n+3) {
+    content-visibility: auto;
+    contain-intrinsic-size: 350px 350px;
+
+}
