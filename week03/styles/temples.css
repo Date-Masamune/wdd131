@@ -13,6 +13,7 @@ body {
     margin: 0;
 }
 
+
 .site-header {
     position: relative;
     z-index: 1000;
@@ -79,6 +80,7 @@ body {
     line-height: 1.2;
 }
 
+
 .page {
     display: grid;
     justify-content: center;
@@ -92,6 +94,7 @@ main>h1 {
     text-align: center;
     font-family: var(--font-heading);
 }
+
 
 .gallery {
     width: min(100%, 560px);
@@ -113,11 +116,11 @@ main>h1 {
     box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
 }
 
+
 .gallery img {
     width: 100%;
+    height: auto;
     max-width: 520px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
     border-radius: 12px;
     display: block;
     margin: 0 auto .5rem;
@@ -127,6 +130,7 @@ main>h1 {
     font-family: var(--font-heading);
     font-size: 1.05rem;
 }
+
 
 footer {
     background: var(--nav-bg);
@@ -139,4 +143,18 @@ footer {
 footer a {
     color: #fff;
     text-decoration: underline;
+}
+
+
+@media (min-width: 900px) {
+    .menu-icon {
+        display: none;
+    }
+
+    .site-header nav {
+        display: block;
+        position: static;
+        width: auto;
+        border: none;
+    }
 }
