@@ -105,6 +105,8 @@ h2 {
     padding: .25rem .5rem;
     background: none;
     border: none;
+    width: 2rem;
+    text-align: center;
 }
 
 .site-header nav {
