@@ -44,6 +44,7 @@
 body {
     margin: 0;
     font-family: var(--font-body);
+    font-size-adjust: 0.5;
 }
 
 .brand,
@@ -58,6 +59,7 @@ h2 {
     margin: 0;
     line-height: 1.2;
     font-family: var(--font-heading);
+    font-size-adjust: 0.46;
 }
 
 .title-group {
@@ -172,7 +174,6 @@ h2 {
     box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
     display: flex;
     flex-direction: column;
-    content-visibility: auto;
 }
 
 .gallery img {
