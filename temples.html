@@ -14,7 +14,10 @@
         rel="stylesheet">
     <link rel="stylesheet" href="styles/temples.css">
     <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 900px)">
-    <link rel="icon" href="favicon.ico">
+    <link rel="preload" as="image" href="images/manila-philippines-temple.jpg"
+        imagesrcset="images/manila-philippines-temple.jpg 1040w" imagesizes="(min-width:900px) 350px, 100vw"
+        fetchpriority="high">
+    <script src="scripts/temples.js" defer></script>
 </head>
 
 <body>
@@ -27,6 +30,7 @@
                 <li><a href="#">Old</a></li>
                 <li><a href="#">New</a></li>
                 <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
             </ul>
         </nav>
     </header>
