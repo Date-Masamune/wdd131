@@ -9,14 +9,16 @@
     <title>Temple Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles/temples.css">
-    <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 900px)">
-    <link rel="preload" as="image" href="images/manila-philippines-temple.jpg"
-        imagesrcset="images/manila-philippines-temple.jpg 1040w" imagesizes="(min-width:900px) 350px, 100vw"
-        fetchpriority="high">
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;800&family=Open+Sans:wght@400;600;700&display=swap">
+    </noscript>
+
     <script src="scripts/temples.js" defer></script>
 </head>
 
