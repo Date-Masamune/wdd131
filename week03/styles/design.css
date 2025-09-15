@@ -2,6 +2,7 @@ body {
     font-family: Roboto, helvetica, sans-serif;
 }
 
+
 header,
 main,
 footer {
@@ -20,11 +21,13 @@ h1 {
 
 main {
     display: grid;
+    grid-template-columns: 1fr 200px;
 }
 
 h2 {
     color: navy;
     text-align: left;
+    grid-column: 1 / 3;
 }
 
 article p {
@@ -32,14 +35,25 @@ article p {
 }
 
 .callout {
+    border: 1px solid rgb(0 0 0 / 0.1);
     color: #000000;
     background-color: #f1e4f6;
+    grid-column: 1/3;
     padding: 1rem;
+}
+
+.banner {
+    border: 1px solid rgb(0 0 0 / 0.2);
+    padding: 1rem;
+    background-color: rgb(230 243 254 / 1);
+    font-weight: 700;
+    word-break: break-word;
+    text-align: center;
 }
 
 footer {
     margin-top: 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: smaller;
-    text-align: right;
+    text-align: left;
 }
