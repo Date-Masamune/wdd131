@@ -8,7 +8,6 @@
     .hero-img {
         width: 100vw;
         min-height: 100%;
-        border-radius: 0;
         object-fit: cover;
         display: block;
     }
