@@ -7,16 +7,15 @@
     <meta name="description" content="This page is about Japan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 131 | Country Page | Jacob Gishwiller</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/countries.css">
     <link rel="stylesheet" href="styles/countries-large.css">
     <script src="scripts/countries.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" as="style"
-        onload="this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
-    </noscript>
 </head>
 
 <body>
@@ -25,10 +24,16 @@
     </header>
 
     <main class="hero">
-        <img class="hero-img" src="images/japan-mount-fuji.webp" alt="Scenic view of Japan">
+        <picture>
+            <source srcset="images/japan-mount-fuji-small.webp" media="(max-width: 600px)">
+            <source srcset="images/japan-mount-fuji-medium.webp" media="(max-width: 1024px)">
+            <img class="hero-img" src="images/japan-mount-fuji.webp" alt="Scenic view of Japan">
+        </picture>
 
         <section class="card data" aria-labelledby="data-card">
-            <h2 id="data-card" class="card-title"><span>Data</span></h2>
+            <h2 id="data-card" class="card-title">
+                <span>Data</span>
+            </h2>
             <dl class="kv">
                 <dt>Area:</dt>
                 <dd>377,975 sq km</dd>
@@ -52,7 +57,7 @@
         <section class="card weather" aria-labelledby="weather-card">
             <h2 id="weather-card" class="card-title">
                 <span>Weather</span>
-                <img class="wx-icon" src="images/weather-icon.svg" alt="" aria-hidden="true">
+                <img class="wx-icon" src="images/weather-icon.svg" alt="weather-icon" aria-hidden="true" />
             </h2>
             <dl class="kv">
                 <dt>Temperature:</dt>
@@ -60,9 +65,9 @@
                 <dt>Conditions:</dt>
                 <dd id="wx-cond">Raining</dd>
                 <dt>Wind:</dt>
-                <dd id="wx-wind">--</dd>
+                <dd id="wx-wind">5 km/h</dd>
                 <dt>Wind Chill:</dt>
-                <dd id="wx-chill">--</dd>
+                <dd id="wx-chill">9.8 °C</dd>
             </dl>
         </section>
     </main>
