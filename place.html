@@ -7,8 +7,6 @@
     <meta name="description" content="This page is about Japan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 131 | Country Page | Jacob Gishwiller</title>
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -25,9 +23,12 @@
 
     <main class="hero">
         <picture>
-            <source srcset="images/japan-mount-fuji-small.webp" media="(max-width: 600px)">
-            <source srcset="images/japan-mount-fuji-medium.webp" media="(max-width: 1024px)">
-            <img class="hero-img" src="images/japan-mount-fuji.webp" alt="Scenic view of Japan">
+            <source srcset="
+        images/japan-mount-fuji.webp 600w,
+        images/japan-mount-fuji.webp 1024w,
+        images/japan-mount-fuji.webp 1800w" sizes="100vw" type="image/webp">
+            <img class="hero-img" src="images/japan-mount-fuji.webp" alt="Scenic view of Japan" width="1800"
+                height="900" decoding="async" fetchpriority="high">
         </picture>
 
         <section class="card data" aria-labelledby="data-card">
