@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jacob Gishwiller">
+    <meta name="description" content="This page is about Japan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 | Country Page | Jacob Gishwiller</title>
+
+    <link rel="stylesheet" href="styles/countries.css">
+    <link rel="stylesheet" href="styles/countries-large.css">
+    <script src="scripts/countries.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>Japan</h1>
+    </header>
+
+    <main class="hero">
+        <img class="hero-img" src="images/japan-mount-fuji.webp" alt="Scenic view of Japan">
+
+        <section class="card data" aria-labelledby="data-card">
+            <h2 id="data-card" class="card-title"><span>Data</span></h2>
+            <dl class="kv">
+                <dt>Area:</dt>
+                <dd>377,975 sq km</dd>
+                <dt>Population:</dt>
+                <dd>123,103,479</dd>
+                <dt>Capital:</dt>
+                <dd>Tokyo</dd>
+                <dt>Languages:</dt>
+                <dd>Japanese</dd>
+                <dt>Currency:</dt>
+                <dd>Japanese Yen</dd>
+                <dt>Time Zone:</dt>
+                <dd>UTC+9</dd>
+                <dt>Calling Code:</dt>
+                <dd>+81</dd>
+                <dt>Internet TLD:</dt>
+                <dd>.jp</dd>
+            </dl>
+        </section>
+
+        <section class="card weather" aria-labelledby="weather-card">
+            <h2 id="weather-card" class="card-title">
+                <span>Weather</span>
+                <img class="wx-icon" src="images/weather-icon.svg" alt="" aria-hidden="true">
+            </h2>
+            <dl class="kv">
+                <dt>Temperature:</dt>
+                <dd id="wx-temp">10 °C</dd>
+                <dt>Conditions:</dt>
+                <dd id="wx-cond">Raining</dd>
+                <dt>Wind:</dt>
+                <dd id="wx-wind">--</dd>
+                <dt>Wind Chill:</dt>
+                <dd id="wx-chill">--</dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer>
+        <p><span id="currentyear"></span> 🌪 Jacob Gishwiller 🌪, USA, Utah</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+@media (min-width: 900px) {
+    .hero {
+        position: relative;
+        padding: 0;
+        max-width: none;
+    }
+
+    .hero-img {
+        width: 100vw;
+        height: 68vh;
+        border-radius: 0;
+        object-fit: cover;
+        box-shadow: none;
+        display: block;
+    }
+
+    .hero .card {
+        position: absolute;
+        z-index: 2;
+        max-width: 420px;
+    }
+
+    .hero .data {
+        left: 5%;
+        top: 8%;
+    }
+
+    .hero .weather {
+        right: 5%;
+        bottom: 8%;
+    }
+
+    .hero {
+        padding-bottom: 4rem;
+    }
+}
