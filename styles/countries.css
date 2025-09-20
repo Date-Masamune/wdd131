@@ -14,6 +14,7 @@
 html,
 body {
     height: 100%;
+    min-height: 100svh;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -23,7 +24,7 @@ body {
     background: #fff;
 }
 
-
+/* Header + circle */
 .site-header {
     position: relative;
     display: grid;
@@ -56,11 +57,12 @@ body {
     font-size: clamp(2rem, 4.5vw, 2.6rem);
 }
 
-
+/* Hero (background matches footer so any seam is invisible) */
 .hero {
+    flex: 1 0 auto;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    background: var(--flag-red);
 }
 
 .hero picture {
@@ -75,7 +77,7 @@ body {
     object-fit: cover;
 }
 
-
+/* Cards */
 .card {
     background: var(--card-bg);
     border-radius: var(--radius);
@@ -105,7 +107,7 @@ body {
     height: 26px;
 }
 
-
+/* Definition list */
 .kv {
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -125,7 +127,7 @@ body {
     color: #333;
 }
 
-
+/* Footer */
 footer {
     margin-top: 0;
     width: 100%;

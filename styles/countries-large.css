@@ -16,11 +16,14 @@
     .hero {
         position: relative;
         padding: 0;
+        background: var(--flag-red);
+        /* keep the red backdrop on desktop too */
     }
 
     .hero-img {
         width: 100vw;
-        height: 68vh;
+        height: 72vh;
+        /* your extended height */
         object-fit: cover;
         display: block;
     }
