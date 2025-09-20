@@ -24,7 +24,6 @@ body {
     background: #fff;
 }
 
-
 .site-header {
     position: relative;
     display: grid;
@@ -57,7 +56,6 @@ body {
     font-size: clamp(2rem, 4.5vw, 2.6rem);
 }
 
-
 .hero {
     flex: 1 0 auto;
     margin: 0;
@@ -76,7 +74,6 @@ body {
     height: auto;
     object-fit: cover;
 }
-
 
 .card {
     background: var(--card-bg);
@@ -107,7 +104,6 @@ body {
     height: 26px;
 }
 
-
 .kv {
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -126,7 +122,6 @@ body {
     margin: 0;
     color: #333;
 }
-
 
 footer {
     margin-top: 0;
@@ -147,4 +142,28 @@ footer::after {
     background: #fff;
     margin: 1rem auto 0;
     border-radius: 2px;
+}
+
+@media (max-width: 899px) {
+    .hero {
+        background: #fff;
+        position: relative;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 12px;
+        background: var(--flag-red);
+        pointer-events: none;
+    }
+
+    .site-header::before {
+        width: clamp(120px, 18vw, 160px);
+        height: clamp(120px, 18vw, 160px);
+        transform: translate(-50%, -60%);
+    }
 }
