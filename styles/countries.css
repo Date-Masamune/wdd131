@@ -1,14 +1,14 @@
 :root {
     --flag-red: #bc002d;
-    --card-bg: rgba(255, 255, 255, .92);
-    --shadow: 0 8px 18px rgba(0, 0, 0, .25);
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
     --radius: 14px;
     --heading-font: "Open Sans", sans-serif;
     --body-font: "Open Sans", sans-serif;
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
@@ -17,61 +17,62 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     font-family: var(--body-font);
     color: #111;
-    background: #fff;
     line-height: 1.5;
+    background: #fff;
 }
 
 
 .site-header {
+    position: relative;
+    display: grid;
+    place-items: center;
     background: #fff;
     color: #000;
-    text-align: center;
-    padding: 1.75rem 1rem 1.1rem;
-    position: relative;
+    padding: .55rem 0 .25rem;
+}
+
+.site-header::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -68%);
+    width: clamp(150px, 12vw, 210px);
+    height: clamp(150px, 12vw, 210px);
+    background: var(--flag-red);
+    border-radius: 50%;
+    z-index: 0;
 }
 
 .site-header h1 {
-    display: inline-block;
     position: relative;
-    z-index: 2;
+    z-index: 1;
+    margin: 0;
     font-family: var(--heading-font);
     font-weight: 800;
     letter-spacing: .02em;
-    font-size: clamp(1.6rem, 5vw, 2.2rem);
-}
-
-.site-header h1::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -54%);
-    width: clamp(120px, 26vw, 170px);
-    height: clamp(120px, 26vw, 170px);
-    background: var(--flag-red);
-    border-radius: 50%;
-    z-index: 1;
-    pointer-events: none;
+    font-size: clamp(2rem, 4.5vw, 2.6rem);
 }
 
 
 .hero {
-    flex: 1 0 auto;
-    padding: 0
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .hero picture {
-    display: block
+    display: block;
+    line-height: 0;
 }
 
 .hero-img {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover
+    object-fit: cover;
 }
 
 
@@ -101,7 +102,7 @@ body {
 
 .wx-icon {
     width: 26px;
-    height: 26px
+    height: 26px;
 }
 
 
@@ -116,17 +117,17 @@ body {
 .kv dt {
     font-weight: 800;
     color: #222;
-    justify-self: end
+    justify-self: end;
 }
 
 .kv dd {
     margin: 0;
-    color: #333
+    color: #333;
 }
 
 
 footer {
-    margin-top: auto;
+    margin-top: 0;
     width: 100%;
     background: var(--flag-red);
     color: #fff;
@@ -144,21 +145,4 @@ footer::after {
     background: #fff;
     margin: 1rem auto 0;
     border-radius: 2px;
-}
-
-
-@media (max-width:899px) {
-    .site-header {
-        padding-bottom: 1.6rem
-    }
-
-    .site-header h1::before {
-        width: clamp(110px, 28vw, 160px);
-        height: clamp(110px, 28vw, 160px);
-        transform: translate(-50%, -58%);
-    }
-
-    .hero picture {
-        margin-top: .4rem
-    }
 }

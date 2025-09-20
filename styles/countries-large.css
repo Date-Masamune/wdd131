@@ -1,20 +1,21 @@
-@media (min-width:900px) {
-
-
+@media (min-width: 900px) {
     .site-header {
-        padding: 2.4rem 1rem 1.6rem
+        padding: .6rem 0 .3rem;
     }
 
-    .site-header h1::before {
-        width: clamp(150px, 10vw, 210px);
-        height: clamp(150px, 10vw, 210px);
-        transform: translate(-50%, -62%);
+    .site-header::before {
+        width: clamp(170px, 12vw, 220px);
+        height: clamp(170px, 12vw, 220px);
+        transform: translate(-50%, -70%);
+    }
+
+    .site-header h1 {
+        font-size: clamp(2.1rem, 4.5vw, 2.8rem);
     }
 
     .hero {
         position: relative;
         padding: 0;
-        max-width: none;
     }
 
     .hero-img {
@@ -33,11 +34,11 @@
 
     .hero .data {
         left: 5%;
-        top: 12%
+        top: 12%;
     }
 
     .hero .weather {
         right: 5%;
-        bottom: 10%
+        bottom: 10%;
     }
 }
