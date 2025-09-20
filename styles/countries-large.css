@@ -6,7 +6,8 @@
     .site-header::before {
         width: clamp(170px, 12vw, 220px);
         height: clamp(170px, 12vw, 220px);
-        transform: translate(-50%, -70%);
+        transform: translate(-50%, -66%);
+        
     }
 
     .site-header h1 {
@@ -17,13 +18,11 @@
         position: relative;
         padding: 0;
         background: var(--flag-red);
-        /* keep the red backdrop on desktop too */
     }
 
     .hero-img {
         width: 100vw;
         height: 72vh;
-        /* your extended height */
         object-fit: cover;
         display: block;
     }
@@ -43,5 +42,16 @@
     .hero .weather {
         right: 5%;
         bottom: 10%;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .hero .data {
+        left: 6.5%;
+    }
+
+    .hero .weather {
+        right: 6.5%;
     }
 }
