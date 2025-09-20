@@ -1,28 +1,27 @@
 :root {
     --flag-red: #bc002d;
-    --card-bg: rgba(255, 255, 255, 0.92);
-    --shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    --card-bg: rgba(255, 255, 255, .92);
+    --shadow: 0 8px 18px rgba(0, 0, 0, .25);
     --radius: 14px;
     --heading-font: "Open Sans", sans-serif;
     --body-font: "Open Sans", sans-serif;
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
 html,
 body {
     height: 100%;
     margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: var(--body-font);
     color: #111;
-    line-height: 1.5;
     background: #fff;
+    line-height: 1.5;
 }
 
 
@@ -30,48 +29,49 @@ body {
     background: #fff;
     color: #000;
     text-align: center;
-    padding: 2.25rem 1rem 1.25rem;
+    padding: 1.75rem 1rem 1.1rem;
     position: relative;
 }
 
-.site-header::before {
+.site-header h1 {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    font-family: var(--heading-font);
+    font-weight: 800;
+    letter-spacing: .02em;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+}
+
+.site-header h1::before {
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: clamp(120px, 16vw, 200px);
-    height: clamp(120px, 16vw, 200px);
+    transform: translate(-50%, -54%);
+    width: clamp(120px, 26vw, 170px);
+    height: clamp(120px, 26vw, 170px);
     background: var(--flag-red);
     border-radius: 50%;
-    z-index: 0;
-    opacity: 0.9;
-}
-
-.site-header h1 {
-    margin: 0;
-    font-family: var(--heading-font);
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    position: relative;
     z-index: 1;
+    pointer-events: none;
 }
 
-/* Hero */
+
 .hero {
     flex: 1 0 auto;
-    padding: 0;
+    padding: 0
 }
 
 .hero picture {
-    display: block;
+    display: block
 }
 
 .hero-img {
     display: block;
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: cover
 }
 
 
@@ -90,7 +90,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin: -1rem -1.25rem 1rem -1.25rem;
-    padding: 0.65rem 0.95rem;
+    padding: .65rem .95rem;
     background: var(--flag-red);
     color: #fff;
     font-family: var(--heading-font);
@@ -101,27 +101,27 @@ body {
 
 .wx-icon {
     width: 26px;
-    height: 26px;
+    height: 26px
 }
 
 
 .kv {
     display: grid;
     grid-template-columns: max-content 1fr;
-    gap: 0.6rem 1.1rem;
+    gap: .6rem 1.1rem;
     margin: 0;
-    padding: 0.25rem 0 0;
+    padding: .25rem 0 0;
 }
 
 .kv dt {
     font-weight: 800;
     color: #222;
-    justify-self: end;
+    justify-self: end
 }
 
 .kv dd {
     margin: 0;
-    color: #333;
+    color: #333
 }
 
 
@@ -147,18 +147,18 @@ footer::after {
 }
 
 
-@media (max-width: 899px) {
+@media (max-width:899px) {
     .site-header {
-        padding-bottom: 1.75rem;
+        padding-bottom: 1.6rem
     }
 
-    .site-header::before {
-        width: clamp(96px, 20vw, 136px);
-        height: clamp(96px, 20vw, 136px);
+    .site-header h1::before {
+        width: clamp(110px, 28vw, 160px);
+        height: clamp(110px, 28vw, 160px);
         transform: translate(-50%, -58%);
     }
 
     .hero picture {
-        margin-top: 0.5rem;
+        margin-top: .4rem
     }
 }

@@ -1,14 +1,14 @@
-@media (min-width: 900px) {
+@media (min-width:900px) {
 
 
     .site-header {
-        padding: 2.5rem 1rem 1.75rem;
+        padding: 2.4rem 1rem 1.6rem
     }
 
-    .site-header::before {
-        width: clamp(140px, 10vw, 200px);
-        height: clamp(140px, 10vw, 200px);
-        transform: translate(-50%, -66%);
+    .site-header h1::before {
+        width: clamp(150px, 10vw, 210px);
+        height: clamp(150px, 10vw, 210px);
+        transform: translate(-50%, -62%);
     }
 
     .hero {
@@ -33,11 +33,11 @@
 
     .hero .data {
         left: 5%;
-        top: 12%;
+        top: 12%
     }
 
     .hero .weather {
         right: 5%;
-        bottom: 10%;
+        bottom: 10%
     }
 }
