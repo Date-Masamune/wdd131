@@ -57,22 +57,23 @@ body {
     z-index: 1;
 }
 
-
+/* Hero */
 .hero {
     flex: 1 0 auto;
-    display: grid;
-    gap: 1.25rem;
     padding: 0;
 }
 
+.hero picture {
+    display: block;
+}
+
 .hero-img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
     object-fit: cover;
-    border-radius: 0;
-    box-shadow: none;
 }
+
 
 .card {
     background: var(--card-bg);
@@ -81,7 +82,7 @@ body {
     padding: 1rem 1.25rem 1.5rem;
     backdrop-filter: saturate(1.05) blur(2px);
     width: clamp(300px, 90%, 420px);
-    margin-inline: auto;
+    margin: 1rem auto;
 }
 
 .card-title {
@@ -143,4 +144,21 @@ footer::after {
     background: #fff;
     margin: 1rem auto 0;
     border-radius: 2px;
+}
+
+
+@media (max-width: 899px) {
+    .site-header {
+        padding-bottom: 1.75rem;
+    }
+
+    .site-header::before {
+        width: clamp(96px, 20vw, 136px);
+        height: clamp(96px, 20vw, 136px);
+        transform: translate(-50%, -58%);
+    }
+
+    .hero picture {
+        margin-top: 0.5rem;
+    }
 }
