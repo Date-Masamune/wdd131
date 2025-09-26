@@ -1,3 +1,4 @@
+
 const temples = [
     {
         templeName: "Aba Nigeria",
@@ -48,6 +49,7 @@ const temples = [
         area: 116642,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
+
     {
         templeName: "Winter Quarters Nebraska",
         location: "Omaha, Nebraska, United States",
@@ -63,34 +65,35 @@ const temples = [
         imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/sapporo-japan-temple/sapporo-japan-temple-33518.jpg"
     },
     {
-        templeName: "Accra Ghana",
-        location: "Accra, Ghana",
-        dedicated: "2004, January, 11",
-        area: 17500,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/accra-ghana-temple/accra-ghana-temple-7489.jpg"
+        templeName: "Laie Hawaii",
+        location: "Laie, Oahu, Hawaii, United States",
+        dedicated: "1919, November, 27",
+        area: 42320,
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple/laie-hawaii-temple-37900.jpg"
+
     },
     {
-        templeName: "Rome Italy",
-        location: "Rome, Italy",
-        dedicated: "2019, March, 10",
-        area: 41010,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple/rome-italy-temple-22045.jpg"
+        templeName: "Tokyo Japan",
+        location: "Tokyo, Japan",
+        dedicated: "1980, October, 27",
+        area: 53997,
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-26340.jpg"
     },
+
     {
-        templeName: "Seoul Korea",
-        location: "Seoul, Korea",
-        dedicated: "1985, December, 14",
-        area: 28057,
-        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/seoul-korea-temple/seoul-korea-temple-10189.jpg"
-    }
+        templeName: "Bountiful Utah",
+        location: "Bountiful, Utah, United States",
+        dedicated: "1995, January, 8",
+        area: 104000,
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bountiful-utah-temple/bountiful-utah-temple-58567.jpg"
 
-
+    },
 
 ];
 
 temples.forEach(t => {
     const probe = new Image();
-    probe.referrerPolicy = "no-referrer"; // helps with hotlink blocks
+    probe.referrerPolicy = "no-referrer";
     probe.onload = () => console.log("OK:", t.templeName);
     probe.onerror = () => console.warn("BROKEN:", t.templeName, "->", t.imageUrl);
     probe.src = t.imageUrl;
