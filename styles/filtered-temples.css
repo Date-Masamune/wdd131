@@ -1,0 +1,211 @@
+@font-face {
+    font-family: "Merriweather";
+    src: url("../fonts/Merriweather-700.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("../fonts/Merriweather-800.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-400.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-600.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --nav-bg: #264653;
+    --nav-text: #fff;
+    --font-heading: "Merriweather", Georgia, "Times New Roman", serif;
+    --font-body: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size-adjust: 0.5;
+}
+
+.brand,
+.navigation a,
+.page>h1,
+.gallery figcaption {
+    line-height: 1.2;
+}
+
+h1,
+h2 {
+    margin: 0;
+    line-height: 1.2;
+    font-family: var(--font-heading);
+    font-size-adjust: 0.46;
+}
+
+.title-group {
+    width: min(100%, 560px);
+    text-align: center;
+    margin: 1rem 0 .5rem;
+}
+
+.title-group h1 {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.title-group h2 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 1rem;
+    background: var(--nav-bg);
+    color: var(--nav-text);
+}
+
+.brand {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.menu-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    padding: .25rem .5rem;
+    background: none;
+    border: none;
+    width: 2rem;
+    text-align: center;
+}
+
+.site-header nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 240px;
+    background: var(--nav-bg);
+    border-left: 1px solid rgba(255, 255, 255, .15);
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.site-header nav.open {
+    display: block;
+}
+
+.navigation {
+    list-style: none;
+    margin: 0;
+    padding: .25rem 0;
+}
+
+.navigation li {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+.navigation a {
+    display: block;
+    padding: .9rem 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.page {
+    display: grid;
+    justify-content: center;
+    padding: 1.5rem 0;
+}
+
+.gallery {
+    width: min(100%, 560px);
+    margin: 0 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
+}
+
+.gallery figure {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 520px;
+    border-radius: 12px;
+    margin: 0 auto .5rem;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+}
+
+.gallery figcaption {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    line-height: 1.25;
+    margin-top: .75rem;
+    display: block;
+    overflow: hidden;
+    max-height: calc(1.25em * 2);
+}
+
+footer {
+    background: var(--nav-bg);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: var(--font-body);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}

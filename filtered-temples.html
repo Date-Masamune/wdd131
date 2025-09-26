@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 – Temple Photo Gallery by Jacob Gishwiller">
+    <meta name="author" content="Jacob Gishwiller">
+    <title>Temple Gallery</title>
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+    <script src="scripts/temples.js" defer></script>
+    <link rel="preload" as="image" href="images/manila-philippines-temple-700.jpg"
+        imagesrcset="images/manila-philippines-temple-700.jpg 700w, images/manila-philippines-temple-1040.jpg 1040w"
+        imagesizes="(min-width:900px) 350px, 100vw" fetchpriority="high">
+        <link rel="icon" href="favicon.ico">
+    <link rel="preload" as="font" href="fonts/Merriweather-700.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/Merriweather-800.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/OpenSans-400.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/OpenSans-600.woff2" type="font/woff2" crossorigin>
+
+
+</head>
+
+<body>
+    <header class="site-header">
+        <span class="brand">Temple Album</span>
+        <button class="menu-icon" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+        <nav id="primary-nav" aria-label="Primary">
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="title-group">
+            <h1>Temple</h1>
+            <h2>Photo Gallery</h2>
+        </div>
+
+        <section class="gallery">
+            <figure>
+                <img src="images/manila-philippines-temple.jpg" width="1040" height="780" fetchpriority="high"
+                    decoding="async" alt="Manila Philippines Temple">
+                <figcaption>Manila Philippines</figcaption>
+            </figure>
+            <figure>
+                <img src="images/bountiful-temple.jpg" width="1040" height="780" decoding="async"
+                    alt="Bountiful Utah Temple">
+                <figcaption>Bountiful Utah</figcaption>
+            </figure>
+            <figure>
+                <img src="images/osaka-japan-temple.jpg" width="1040" height="780" loading="lazy" decoding="async"
+                    alt="Osaka Japan Temple">
+                <figcaption>Osaka Japan</figcaption>
+            </figure>
+            <figure>
+                <img src="images/sapporo-japan.jpg" width="1040" height="780" loading="lazy" decoding="async"
+                    alt="Sapporo Japan Temple">
+                <figcaption>Sapporo Japan</figcaption>
+            </figure>
+            <figure>
+                <img src="images/winter-quarters-nebraska-temple.jpg" width="1040" height="780" loading="lazy"
+                    decoding="async" alt="Winter Quarters Nebraska Temple">
+                <figcaption>Winter Quarters Nebraska</figcaption>
+            </figure>
+            <figure>
+                <img src="images/billings-Montana-Temple.jpg" width="1040" height="780" loading="lazy" decoding="async"
+                    alt="Billings Montana Temple">
+                <figcaption>Billings Montana</figcaption>
+            </figure>
+            <figure>
+                <img src="images/idaho-Falls-Temple.jpg" width="1040" height="780" loading="lazy" decoding="async"
+                    alt="Idaho Falls Idaho Temple">
+                <figcaption>Idaho Falls Idaho</figcaption>
+            </figure>
+            <figure>
+                <img src="images/laie-temple.jpg" width="1040" height="780" loading="lazy" decoding="async"
+                    alt="Laie Hawaii Temple">
+                <figcaption>Laie Hawaii</figcaption>
+            </figure>
+            <figure>
+                <img src="images/bern-switzerland-temple.jpg" width="1040" height="780" loading="lazy" decoding="async"
+                    alt="Bern Switzerland Temple">
+                <figcaption>Bern Switzerland</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> • Temple Album</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/dates.js" defer></script>
+</body>
+
+</html>
