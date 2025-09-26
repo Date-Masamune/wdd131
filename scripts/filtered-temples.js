@@ -192,3 +192,46 @@ navLinks.forEach((a) => {
 
 document.querySelector(".navigation a")?.classList.add("active");
 render(temples);
+
+
+const menuBtn = document.querySelector(".menu-icon");
+const primaryNav = document.getElementById("primary-nav");
+const mq900 = window.matchMedia("(min-width: 900px)");
+
+if (menuBtn && primaryNav) {
+    function setBtnState(open) {
+        menuBtn.textContent = open ? "✖" : "☰";
+        menuBtn.setAttribute("aria-expanded", String(open));
+        menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+
+    function closeMenu() {
+        primaryNav.classList.remove("open");
+        setBtnState(false);
+    }
+
+   
+    setBtnState(primaryNav.classList.contains("open"));
+
+
+    menuBtn.addEventListener("click", () => {
+        const open = !primaryNav.classList.contains("open");
+        primaryNav.classList.toggle("open", open);
+        setBtnState(open);
+    });
+
+   
+    primaryNav.addEventListener("click", (e) => {
+        if (e.target.closest("a")) closeMenu();
+    });
+
+    
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+    });
+
+    
+    mq900.addEventListener("change", (e) => {
+        if (e.matches) closeMenu();
+    });
+}
