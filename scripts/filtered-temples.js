@@ -91,17 +91,10 @@ const temples = [
 
 ];
 
-temples.forEach(t => {
-    const probe = new Image();
-    probe.referrerPolicy = "no-referrer";
-    probe.onload = () => console.log("OK:", t.templeName);
-    probe.onerror = () => console.warn("BROKEN:", t.templeName, "->", t.imageUrl);
-    probe.src = t.imageUrl;
-});
 
 
 (() => {
-    const yearEl = document.getElementById("currentyear");
+    const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     const modEl = document.getElementById("lastModified");
@@ -114,71 +107,88 @@ temples.forEach(t => {
                 month: "long",
                 day: "numeric",
                 hour: "2-digit",
-                minute: "2-digit"
+                minute: "2-digit",
             })}`
             : `Last modified: ${raw}`;
     }
 })();
 
-document.addEventListener("DOMContentLoaded", () => {
-    const menuButton = document.querySelector(".menu-icon");
-    const nav = document.querySelector(".site-header nav");
-    const mq = window.matchMedia("(min-width: 900px)");
 
-    if (menuButton && nav) {
-        function setButton(open) {
-            menuButton.textContent = open ? "✖" : "☰";
-            menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-            menuButton.setAttribute("aria-expanded", String(open));
-        }
-        function closeMenu() {
+
+const gallery = document.querySelector(".gallery");
+const navLinks = [...document.querySelectorAll(".navigation a")];
+
+function getYear(d) {
+    const y = parseInt(String(d).trim().split(",")[0], 10);
+    return Number.isFinite(y) ? y : NaN;
+}
+
+function makeCard(t) {
+    const fig = document.createElement("figure");
+    const cap = document.createElement("figcaption");
+    cap.innerHTML = `
+    <div class="name">${t.templeName}</div>
+    <p><span class="label">Location:</span> ${t.location}</p>
+    <p><span class="label">Dedicated:</span> ${t.dedicated}</p>
+    <p><span class="label">Size:</span> ${Number(t.area).toLocaleString()} sq ft</p>
+  `;
+
+
+    const img = new Image();
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.alt = t.templeName;
+    img.src = t.imageUrl;
+    img.onerror = () => {
+        img.src = "https://placehold.co/800x600?text=Image+Unavailable";
+    };
+
+    fig.append(cap, img);
+    return fig;
+}
+
+
+
+function render(list) {
+    gallery.innerHTML = "";
+    list.forEach((t) => gallery.appendChild(makeCard(t)));
+}
+
+const filters = {
+    home: () => true,
+    old: (t) => getYear(t.dedicated) < 1900,
+    new: (t) => getYear(t.dedicated) > 2000,
+    large: (t) => Number(t.area) > 90000,
+    small: (t) => Number(t.area) < 10000,
+};
+
+const textToKey = {
+    home: "home",
+    old: "old",
+    new: "new",
+    large: "large",
+    small: "small",
+};
+
+navLinks.forEach((a) => {
+    a.addEventListener("click", (e) => {
+        e.preventDefault();
+        navLinks.forEach((x) => x.classList.remove("active"));
+        a.classList.add("active");
+
+        const key = textToKey[a.textContent.trim().toLowerCase()] || "home";
+        render(temples.filter(filters[key] || filters.home));
+
+
+        const nav = document.getElementById("primary-nav");
+        if (nav && nav.classList.contains("open")) {
             nav.classList.remove("open");
-            setButton(false);
+            const btn = document.querySelector(".menu-icon");
+            if (btn) btn.setAttribute("aria-expanded", "false");
         }
-        setButton(nav.classList.contains("open"));
-        menuButton.addEventListener("click", () => {
-            const open = !nav.classList.contains("open");
-            nav.classList.toggle("open", open);
-            setButton(open);
-        });
-        nav.addEventListener("click", (e) => {
-            if (e.target.closest("a")) closeMenu();
-        });
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") closeMenu();
-        });
-        mq.addEventListener("change", (e) => {
-            if (e.matches) closeMenu();
-        });
-    }
-
-    const gallery = document.querySelector(".gallery");
-    if (gallery) {
-        temples.forEach((temple) => {
-            const figure = document.createElement("figure");
-
-            const img = document.createElement("img");
-            img.src = temple.imageUrl;
-            img.alt = temple.templeName;
-            img.loading = "lazy";
-            img.width = 400;
-            img.height = 250;
-            img.onerror = () => {
-                img.src = "images/placeholder-400x250.jpg";
-                img.alt = `${temple.templeName} (image not available)`;
-            };
-
-            const caption = document.createElement("figcaption");
-            caption.textContent = `${temple.templeName} — ${temple.location}`;
-
-            figure.appendChild(img);
-            figure.appendChild(caption);
-            gallery.appendChild(figure);
-        });
-
-        const countSpan = document.getElementById("gallery-count");
-        if (countSpan) {
-            countSpan.textContent = `(${temples.length})`;
-        }
-    }
+    });
 });
+
+
+document.querySelector(".navigation a")?.classList.add("active");
+render(temples);

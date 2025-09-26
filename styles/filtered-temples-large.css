@@ -108,12 +108,11 @@
 
     .gallery figcaption {
         font-size: 1.1rem;
-        line-height: 1.25;
+        line-height: 1.35;
         margin-top: .75rem;
-        display: block;
-        overflow: hidden;
-        max-height: calc(1.25em * 2);
         text-align: center;
+        max-height: none;
+        overflow: visible;
     }
 
     main {
