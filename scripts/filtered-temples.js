@@ -131,11 +131,9 @@ const filters = {
 };
 
 const textToKey = { home: "home", old: "old", new: "new", large: "large", small: "small" };
-
 function inferDims(url) {
     const m = url.match(/\/(\d{2,4})x(\d{2,4})\//);
-    if (m) return { w: parseInt(m[1], 10), h: parseInt(m[2], 10) };
-    return { w: 400, h: 250 };
+    return m ? { w: +m[1], h: +m[2] } : { w: 400, h: 250 };
 }
 
 function makeCard(t, { isLCP = false } = {}) {
@@ -147,29 +145,25 @@ function makeCard(t, { isLCP = false } = {}) {
     <p><span class="label">Dedicated:</span> ${t.dedicated}</p>
     <p><span class="label">Size:</span> ${Number(t.area).toLocaleString()} sq ft</p>
   `;
-    const imgWrap = document.createElement("div");
-    imgWrap.className = "img-wrap";
+    const wrap = document.createElement("div");
+    wrap.className = "img-wrap";
+
     const img = new Image();
     img.src = t.imageUrl;
     img.alt = t.templeName;
     img.decoding = "async";
     img.sizes = "(max-width: 600px) 100vw, 400px";
     const { w, h } = inferDims(t.imageUrl);
-    img.width = w;
-    img.height = h;
-    if (isLCP) {
-        img.setAttribute("fetchpriority", "high");
-        img.loading = "eager";
-    } else {
-        img.loading = "lazy";
-    }
-    img.onerror = () => {
-        img.src = "https://placehold.co/800x600?text=Image+Unavailable";
-    };
-    imgWrap.appendChild(img);
-    fig.append(cap, imgWrap);
+    img.width = w; img.height = h;
+    if (isLCP) { img.setAttribute("fetchpriority", "high"); img.loading = "eager"; }
+    else { img.loading = "lazy"; }
+    img.onerror = () => { img.src = "https://placehold.co/800x600?text=Image+Unavailable"; };
+
+    wrap.appendChild(img);
+    fig.append(cap, wrap);
     return fig;
 }
+
 
 function render(list) {
     gallery.innerHTML = "";
