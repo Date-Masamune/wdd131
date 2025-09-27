@@ -152,7 +152,6 @@ function makeCard(t, { isLCP = false } = {}) {
     const { w, h } = inferDims(t.imageUrl);
     wrap.style.aspectRatio = `${w} / ${h}`;
 
-
     const img = new Image();
     img.width = w;
     img.height = h;
@@ -163,7 +162,6 @@ function makeCard(t, { isLCP = false } = {}) {
     else { img.setAttribute("fetchpriority", "low"); img.loading = "lazy"; }
     img.onerror = () => { img.src = "https://placehold.co/800x600?text=Image+Unavailable"; };
     img.src = t.imageUrl;
-
 
     wrap.appendChild(img);
     fig.append(cap, wrap);
