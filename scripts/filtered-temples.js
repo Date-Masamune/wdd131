@@ -117,6 +117,30 @@ const temples = [
 const gallery = document.querySelector(".gallery");
 const navLinks = [...document.querySelectorAll(".navigation a")];
 
+let io = null;
+if ("IntersectionObserver" in window) {
+    io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                const img = e.target;
+                io.unobserve(img);
+                const src = img.dataset.src;
+                if (src) { img.src = src; img.removeAttribute("data-src"); }
+            }
+        });
+    }, { rootMargin: "300px 0px" });
+}
+
+function observeImg(img, url) {
+    if (io) {
+        img.dataset.src = url;
+        io.observe(img);
+    } else {
+        img.src = url;
+    }
+}
+
+
 function getYear(d) {
     const y = parseInt(String(d).trim().split(",")[0], 10);
     return Number.isFinite(y) ? y : NaN;
@@ -133,11 +157,13 @@ const filters = {
 const textToKey = { home: "home", old: "old", new: "new", large: "large", small: "small" };
 function inferDims(url) {
     const m = url.match(/\/(\d{2,4})x(\d{2,4})\//);
-    return m ? { w: +m[1], h: +m[2] } : { w: 4, h: 3 };
+    return m ? { w: +m[1], h: +m[2] } : { w: 400, h: 300 };
 }
+
 
 function makeCard(t, { isLCP = false } = {}) {
     const fig = document.createElement("figure");
+
     const cap = document.createElement("figcaption");
     cap.innerHTML = `
     <div class="name">${t.templeName}</div>
@@ -158,10 +184,18 @@ function makeCard(t, { isLCP = false } = {}) {
     img.alt = t.templeName;
     img.decoding = "async";
     img.sizes = "(max-width: 600px) 100vw, 400px";
-    if (isLCP) { img.setAttribute("fetchpriority", "high"); img.loading = "eager"; }
-    else { img.setAttribute("fetchpriority", "low"); img.loading = "lazy"; }
+
+    if (isLCP) {
+        img.setAttribute("fetchpriority", "high");
+        img.loading = "eager";
+        img.src = t.imageUrl;
+    } else {
+        img.setAttribute("fetchpriority", "low");
+        img.loading = "lazy";
+        observeImg(img, t.imageUrl);
+    }
+
     img.onerror = () => { img.src = "https://placehold.co/800x600?text=Image+Unavailable"; };
-    img.src = t.imageUrl;
 
     wrap.appendChild(img);
     fig.append(cap, wrap);
