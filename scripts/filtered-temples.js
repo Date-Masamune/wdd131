@@ -94,7 +94,7 @@ function makeCard(t, { isLCP = false } = {}) {
     img.height = h;
     img.alt = t.templeName;
     img.decoding = "async";
-    img.sizes = "(max-width: 700px) 100vw, 340px";
+    img.sizes = "(max-width: 900px) 100vw, 340px";
 
     if (isLCP) {
         img.setAttribute("fetchpriority", "high");
@@ -116,24 +116,15 @@ function makeCard(t, { isLCP = false } = {}) {
 function render(list) {
     if (!gallery) return;
     gallery.innerHTML = "";
-    if (!list || list.length === 0) return;
+    if (!list?.length) return;
 
-    gallery.appendChild(makeCard(list[0], { isLCP: true }));
-
-    const rest = list.slice(1);
-    let i = 0;
-    const BATCH = 4;
-
-    function pump() {
-        const frag = document.createDocumentFragment();
-        for (let n = 0; n < BATCH && i < rest.length; n++, i++) {
-            frag.appendChild(makeCard(rest[i]));
-        }
-        gallery.appendChild(frag);
-        if (i < rest.length) requestAnimationFrame(pump);
-    }
-    requestAnimationFrame(pump);
+    const frag = document.createDocumentFragment();
+    list.forEach((t, i) => {
+        frag.appendChild(makeCard(t, { isLCP: i === 0 }));
+    });
+    gallery.appendChild(frag);
 }
+
 
 navLinks.forEach((a) => {
     a.addEventListener("click", (e) => {

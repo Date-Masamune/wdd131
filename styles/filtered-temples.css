@@ -155,7 +155,7 @@ h2 {
     font-family: "Merriweather", Georgia, "Times New Roman", serif;
     font-size: 1.05rem;
     line-height: 1.35;
-    max-height: none;
+    max-height: 110px;
     overflow: visible;
 }
 
