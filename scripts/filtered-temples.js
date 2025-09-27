@@ -1,94 +1,53 @@
 
 const temples = [
     {
-        templeName: "Aba Nigeria",
-        location: "Aba, Nigeria",
-        dedicated: "2005, August, 7",
-        area: 11500,
+        templeName: "Aba Nigeria", location: "Aba, Nigeria", dedicated: "2005, August, 7", area: 11500,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
     },
     {
-        templeName: "Manti Utah",
-        location: "Manti, Utah, United States",
-        dedicated: "1888, May, 21",
-        area: 74792,
+        templeName: "Manti Utah", location: "Manti, Utah, United States", dedicated: "1888, May, 21", area: 74792,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
     },
     {
-        templeName: "Payson Utah",
-        location: "Payson, Utah, United States",
-        dedicated: "2015, June, 7",
-        area: 96630,
+        templeName: "Payson Utah", location: "Payson, Utah, United States", dedicated: "2015, June, 7", area: 96630,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
     },
     {
-        templeName: "Yigo Guam",
-        location: "Yigo, Guam",
-        dedicated: "2020, May, 2",
-        area: 6861,
+        templeName: "Yigo Guam", location: "Yigo, Guam", dedicated: "2020, May, 2", area: 6861,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
     },
     {
-        templeName: "Washington D.C.",
-        location: "Kensington, Maryland, United States",
-        dedicated: "1974, November, 19",
-        area: 156558,
+        templeName: "Washington D.C.", location: "Kensington, Maryland, United States", dedicated: "1974, November, 19", area: 156558,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
     },
     {
-        templeName: "Lima Perú",
-        location: "Lima, Perú",
-        dedicated: "1986, January, 10",
-        area: 9600,
+        templeName: "Lima Perú", location: "Lima, Perú", dedicated: "1986, January, 10", area: 9600,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
     },
     {
-        templeName: "Mexico City Mexico",
-        location: "Mexico City, Mexico",
-        dedicated: "1983, December, 2",
-        area: 116642,
+        templeName: "Mexico City Mexico", location: "Mexico City, Mexico", dedicated: "1983, December, 2", area: 116642,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-
     {
-        templeName: "Winter Quarters Nebraska",
-        location: "Omaha, Nebraska, United States",
-        dedicated: "2001, April, 22",
-        area: 16000,
+        templeName: "Winter Quarters Nebraska", location: "Omaha, Nebraska, United States", dedicated: "2001, April, 22", area: 16000,
         imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/winter-quarters-nebraska-temple/winter-quarters-nebraska-temple-57696.jpg"
     },
     {
-        templeName: "Sapporo Japan",
-        location: "Sapporo, Hokkaido, Japan",
-        dedicated: "2016, August, 21",
-        area: 48480,
+        templeName: "Sapporo Japan", location: "Sapporo, Hokkaido, Japan", dedicated: "2016, August, 21", area: 48480,
         imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/sapporo-japan-temple/sapporo-japan-temple-33518.jpg"
     },
     {
-        templeName: "Laie Hawaii",
-        location: "Laie, Oahu, Hawaii, United States",
-        dedicated: "1919, November, 27",
-        area: 42320,
+        templeName: "Laie Hawaii", location: "Laie, Oahu, Hawaii, United States", dedicated: "1919, November, 27", area: 42320,
         imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple/laie-hawaii-temple-37900.jpg"
-
     },
     {
-        templeName: "Tokyo Japan",
-        location: "Tokyo, Japan",
-        dedicated: "1980, October, 27",
-        area: 53997,
+        templeName: "Tokyo Japan", location: "Tokyo, Japan", dedicated: "1980, October, 27", area: 53997,
         imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-26340.jpg"
     },
-
     {
-        templeName: "Bountiful Utah",
-        location: "Bountiful, Utah, United States",
-        dedicated: "1995, January, 8",
-        area: 104000,
+        templeName: "Bountiful Utah", location: "Bountiful, Utah, United States", dedicated: "1995, January, 8", area: 104000,
         imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bountiful-utah-temple/bountiful-utah-temple-58567.jpg"
-
     },
-
 ];
 
 // =======================
@@ -104,11 +63,8 @@ const temples = [
         const dt = new Date(raw);
         modEl.textContent = !Number.isNaN(dt.valueOf())
             ? `Last modified: ${dt.toLocaleString(undefined, {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
+                year: "numeric", month: "long", day: "numeric",
+                hour: "2-digit", minute: "2-digit",
             })}`
             : `Last modified: ${raw}`;
     }
@@ -123,7 +79,6 @@ function getYear(d) {
     const y = parseInt(String(d).trim().split(",")[0], 10);
     return Number.isFinite(y) ? y : NaN;
 }
-
 const filters = {
     home: () => true,
     old: (t) => getYear(t.dedicated) < 1900,
@@ -131,22 +86,15 @@ const filters = {
     large: (t) => Number(t.area) > 90000,
     small: (t) => Number(t.area) < 10000,
 };
-
-const textToKey = {
-    home: "home",
-    old: "old",
-    new: "new",
-    large: "large",
-    small: "small",
-};
+const textToKey = { home: "home", old: "old", new: "new", large: "large", small: "small" };
 
 
-function preloadImage(href) {
-    const link = document.createElement("link");
-    link.rel = "preload";
-    link.as = "image";
-    link.href = href;
-    document.head.appendChild(link);
+
+
+function inferDims(url) {
+    const m = url.match(/\/(\d{2,4})x(\d{2,4})\//);
+    if (m) return { w: parseInt(m[1], 10), h: parseInt(m[2], 10) };
+    return { w: 400, h: 250 };
 }
 
 
@@ -165,6 +113,10 @@ function makeCard(t, { isLCP = false } = {}) {
     img.alt = t.templeName;
     img.src = t.imageUrl;
 
+    const { w, h } = inferDims(t.imageUrl);
+    img.width = w;
+    img.height = h;
+
     if (isLCP) {
         img.setAttribute("fetchpriority", "high");
         img.decoding = "async";
@@ -172,10 +124,6 @@ function makeCard(t, { isLCP = false } = {}) {
         img.loading = "lazy";
         img.decoding = "async";
     }
-
-
-    img.width = 400;
-    img.height = 250;
 
     img.onerror = () => {
         img.src = "https://placehold.co/800x600?text=Image+Unavailable";
@@ -191,16 +139,20 @@ function render(list) {
     if (!list || list.length === 0) return;
 
     const lcpItem = list[0];
-    preloadImage(lcpItem.imageUrl);
     gallery.appendChild(makeCard(lcpItem, { isLCP: true }));
-
     const rest = list.slice(1);
-    const schedule = window.requestIdleCallback || ((fn) => setTimeout(fn, 0));
-    schedule(() => {
+    let i = 0;
+    const BATCH = 4;
+
+    function pump() {
         const frag = document.createDocumentFragment();
-        for (const t of rest) frag.appendChild(makeCard(t));
+        for (let n = 0; n < BATCH && i < rest.length; n++, i++) {
+            frag.appendChild(makeCard(rest[i]));
+        }
         gallery.appendChild(frag);
-    });
+        if (i < rest.length) requestAnimationFrame(pump);
+    }
+    requestAnimationFrame(pump);
 }
 
 
@@ -213,7 +165,7 @@ navLinks.forEach((a) => {
         const key = textToKey[a.textContent.trim().toLowerCase()] || "home";
         render(temples.filter(filters[key] || filters.home));
 
-        // Close mobile menu after selection
+
         const nav = document.getElementById("primary-nav");
         if (nav && nav.classList.contains("open")) {
             nav.classList.remove("open");
@@ -222,6 +174,7 @@ navLinks.forEach((a) => {
         }
     });
 });
+
 
 document.querySelector(".navigation a")?.classList.add("active");
 render(temples);
@@ -237,28 +190,22 @@ if (menuBtn && primaryNav) {
         menuBtn.setAttribute("aria-expanded", String(open));
         menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     }
-
     function closeMenu() {
         primaryNav.classList.remove("open");
         setBtnState(false);
     }
-
     setBtnState(primaryNav.classList.contains("open"));
-
     menuBtn.addEventListener("click", () => {
         const open = !primaryNav.classList.contains("open");
         primaryNav.classList.toggle("open", open);
         setBtnState(open);
     });
-
     primaryNav.addEventListener("click", (e) => {
         if (e.target.closest("a")) closeMenu();
     });
-
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeMenu();
     });
-
     mq900.addEventListener("change", (e) => {
         if (e.matches) closeMenu();
     });
