@@ -150,30 +150,23 @@ function makeCard(t, { isLCP = false } = {}) {
     const wrap = document.createElement("div");
     wrap.className = "img-wrap";
 
-    const img = new Image();
     const { w, h } = inferDims(t.imageUrl);
-
-
+    const img = new Image();
     img.width = w;
     img.height = h;
-
     img.alt = t.templeName;
     img.decoding = "async";
     img.sizes = "(max-width: 600px) 100vw, 400px";
-
     if (isLCP) {
         img.setAttribute("fetchpriority", "high");
         img.loading = "eager";
     } else {
         img.loading = "lazy";
     }
-
     img.onerror = () => {
         img.src = "https://placehold.co/800x600?text=Image+Unavailable";
     };
-
-
-    img.src = t.imageUrl;
+    img.src = t.imageUrl; // set last
 
     wrap.appendChild(img);
     fig.append(cap, wrap);
