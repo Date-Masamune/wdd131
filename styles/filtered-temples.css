@@ -188,7 +188,6 @@ h2 {
 
 
 .gallery .img-wrap {
-    aspect-ratio: 4 / 3;
     overflow: hidden;
     margin-top: .75rem;
     border-radius: 6px;
