@@ -145,11 +145,15 @@ function makeCard(t, { isLCP = false } = {}) {
     <p><span class="label">Dedicated:</span> ${t.dedicated}</p>
     <p><span class="label">Size:</span> ${Number(t.area).toLocaleString()} sq ft</p>
   `;
+
     const wrap = document.createElement("div");
     wrap.className = "img-wrap";
 
+    const { w, h } = inferDims(t.imageUrl);       
+    wrap.style.aspectRatio = `${w} / ${h}`;       
+
     const img = new Image();
-    const { w, h } = inferDims(t.imageUrl);
+    img.width = w;                                
     img.height = h;
     img.alt = t.templeName;
     img.decoding = "async";
@@ -157,7 +161,7 @@ function makeCard(t, { isLCP = false } = {}) {
     if (isLCP) { img.setAttribute("fetchpriority", "high"); img.loading = "eager"; }
     else { img.loading = "lazy"; }
     img.onerror = () => { img.src = "https://placehold.co/800x600?text=Image+Unavailable"; };
-    img.src = t.imageUrl;
+    img.src = t.imageUrl;                         
 
     wrap.appendChild(img);
     fig.append(cap, wrap);
