@@ -166,7 +166,7 @@ function makeCard(t, { isLCP = false } = {}) {
     img.onerror = () => {
         img.src = "https://placehold.co/800x600?text=Image+Unavailable";
     };
-    img.src = t.imageUrl; // set last
+    img.src = t.imageUrl; 
 
     wrap.appendChild(img);
     fig.append(cap, wrap);
