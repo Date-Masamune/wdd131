@@ -85,7 +85,7 @@ h2 {
     padding: .9rem 1rem;
     color: #fff;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .navigation a:hover {
@@ -147,6 +147,7 @@ h2 {
     flex-direction: column;
     content-visibility: auto;
     min-height: 520px;
+    contain: content;
 }
 
 .gallery figcaption {
