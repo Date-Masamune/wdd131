@@ -110,7 +110,6 @@ function makeCard(t, { isLCP = false } = {}) {
     const imgWrap = document.createElement("div");
     imgWrap.className = "img-wrap";
 
-
     const img = new Image();
     img.src = t.imageUrl;
     img.alt = t.templeName;
@@ -128,6 +127,8 @@ function makeCard(t, { isLCP = false } = {}) {
         img.width = 400;
         img.height = 250;
     }
+
+
 
     img.onerror = () => {
         img.src = "https://placehold.co/800x600?text=Image+Unavailable";
