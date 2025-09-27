@@ -95,7 +95,6 @@ function inferDims(url) {
     return { w: 400, h: 250 };
 }
 
-
 function makeCard(t, { isLCP = false } = {}) {
     const fig = document.createElement("figure");
 
@@ -107,18 +106,28 @@ function makeCard(t, { isLCP = false } = {}) {
     <p><span class="label">Size:</span> ${Number(t.area).toLocaleString()} sq ft</p>
   `;
 
+
     const imgWrap = document.createElement("div");
     imgWrap.className = "img-wrap";
+
 
     const img = new Image();
     img.src = t.imageUrl;
     img.alt = t.templeName;
-    if (isLCP) {
-        img.setAttribute("fetchpriority", "high");
-    } else {
-        img.loading = "lazy";
-    }
+    img.loading = isLCP ? "eager" : "lazy";
     img.decoding = "async";
+
+
+    if (t.imageUrl.includes("400x250")) {
+        img.width = 400;
+        img.height = 250;
+    } else if (t.imageUrl.includes("400x225")) {
+        img.width = 400;
+        img.height = 225;
+    } else {
+        img.width = 400;
+        img.height = 250;
+    }
 
     img.onerror = () => {
         img.src = "https://placehold.co/800x600?text=Image+Unavailable";
@@ -128,6 +137,7 @@ function makeCard(t, { isLCP = false } = {}) {
     fig.append(cap, imgWrap);
     return fig;
 }
+
 
 
 function render(list) {
