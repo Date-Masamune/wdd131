@@ -138,6 +138,7 @@ function inferDims(url) {
 
 function makeCard(t, { isLCP = false } = {}) {
     const fig = document.createElement("figure");
+
     const cap = document.createElement("figcaption");
     cap.innerHTML = `
     <div class="name">${t.templeName}</div>
@@ -149,19 +150,30 @@ function makeCard(t, { isLCP = false } = {}) {
     const wrap = document.createElement("div");
     wrap.className = "img-wrap";
 
-    const { w, h } = inferDims(t.imageUrl);       
-    wrap.style.aspectRatio = `${w} / ${h}`;       
-
     const img = new Image();
-    img.width = w;                                
+    const { w, h } = inferDims(t.imageUrl);
+
+
+    img.width = w;
     img.height = h;
+
     img.alt = t.templeName;
     img.decoding = "async";
     img.sizes = "(max-width: 600px) 100vw, 400px";
-    if (isLCP) { img.setAttribute("fetchpriority", "high"); img.loading = "eager"; }
-    else { img.loading = "lazy"; }
-    img.onerror = () => { img.src = "https://placehold.co/800x600?text=Image+Unavailable"; };
-    img.src = t.imageUrl;                         
+
+    if (isLCP) {
+        img.setAttribute("fetchpriority", "high");
+        img.loading = "eager";
+    } else {
+        img.loading = "lazy";
+    }
+
+    img.onerror = () => {
+        img.src = "https://placehold.co/800x600?text=Image+Unavailable";
+    };
+
+
+    img.src = t.imageUrl;
 
     wrap.appendChild(img);
     fig.append(cap, wrap);
@@ -169,23 +181,28 @@ function makeCard(t, { isLCP = false } = {}) {
 }
 
 
+
 function render(list) {
     gallery.innerHTML = "";
     if (!list || list.length === 0) return;
+
     gallery.appendChild(makeCard(list[0], { isLCP: true }));
+
     const rest = list.slice(1);
     let i = 0;
     const BATCH = 4;
+
     function pump() {
         const frag = document.createDocumentFragment();
         for (let n = 0; n < BATCH && i < rest.length; n++, i++) {
-            frag.appendChild(makeCard(rest[i], { isLCP: false }));
+            frag.appendChild(makeCard(rest[i]));
         }
         gallery.appendChild(frag);
         if (i < rest.length) requestAnimationFrame(pump);
     }
     requestAnimationFrame(pump);
 }
+
 
 navLinks.forEach((a) => {
     a.addEventListener("click", (e) => {
