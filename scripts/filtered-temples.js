@@ -161,12 +161,11 @@ function makeCard(t, { isLCP = false } = {}) {
         img.setAttribute("fetchpriority", "high");
         img.loading = "eager";
     } else {
+        img.setAttribute("fetchpriority", "low");
         img.loading = "lazy";
     }
-    img.onerror = () => {
-        img.src = "https://placehold.co/800x600?text=Image+Unavailable";
-    };
-    img.src = t.imageUrl; 
+    img.onerror = () => { img.src = "https://placehold.co/800x600?text=Image+Unavailable"; };
+    img.src = t.imageUrl;
 
     wrap.appendChild(img);
     fig.append(cap, wrap);
