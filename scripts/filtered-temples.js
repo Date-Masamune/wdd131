@@ -150,7 +150,7 @@ function makeCard(t, { isLCP = false } = {}) {
     const imgWrap = document.createElement("div");
     imgWrap.className = "img-wrap";
     const img = new Image();
-    img.src = t.imageUrl;
+    img.src = `https://images.weserv.nl/?url=${encodeURIComponent(t.imageUrl)}&w=400&h=300&output=webp`;
     img.alt = t.templeName;
     img.decoding = "async";
     img.sizes = "(max-width: 600px) 100vw, 400px";
