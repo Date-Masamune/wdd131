@@ -51,7 +51,7 @@
 
 .page,
 .title-group {
-    max-width: calc(3 * 350px + 2 * 3rem);
+    max-width: calc(3 * 340px + 2 * 3rem);
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -66,16 +66,16 @@
 }
 
 .gallery {
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(3, 340px);
     justify-content: center;
     align-items: start;
     gap: 3rem;
     width: 100%;
-    max-width: calc(3 * 350px + 2 * 3rem);
+    max-width: calc(3 * 340px + 2 * 3rem);
     margin: 0 auto 2rem;
 }
 
 .gallery figure {
     width: 100%;
-    max-width: 350px;
+    max-width: 340px;
 }
