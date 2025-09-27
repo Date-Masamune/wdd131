@@ -58,6 +58,7 @@
 
 .page,
 .title-group {
+    max-width: calc(3 * 350px + 2 * 3rem);
     max-width: calc(3 * var(--card) + 2 * var(--g));
     margin: 0 auto;
     padding-left: 1rem;
@@ -74,17 +75,20 @@
 
 
 .gallery {
+    grid-template-columns: repeat(3, 350px);
     grid-template-columns: repeat(3, var(--card));
     justify-content: center;
     align-items: start;
+    gap: 3rem;
     gap: var(--g);
     width: 100%;
+    max-width: calc(3 * 350px + 2 * 3rem);
     max-width: calc(3 * var(--card) + 2 * var(--g));
     margin: 0 auto 2rem;
 }
 
-
 .gallery figure {
     width: 100%;
+    max-width: 350px;
     max-width: var(--card);
 }
