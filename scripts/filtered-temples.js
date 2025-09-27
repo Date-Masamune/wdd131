@@ -91,8 +91,9 @@ const temples = [
 
 ];
 
-
-
+// =======================
+// Footer year/lastModified
+// =======================
 (() => {
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -114,44 +115,13 @@ const temples = [
 })();
 
 
-
 const gallery = document.querySelector(".gallery");
 const navLinks = [...document.querySelectorAll(".navigation a")];
+
 
 function getYear(d) {
     const y = parseInt(String(d).trim().split(",")[0], 10);
     return Number.isFinite(y) ? y : NaN;
-}
-
-function makeCard(t) {
-    const fig = document.createElement("figure");
-    const cap = document.createElement("figcaption");
-    cap.innerHTML = `
-    <div class="name">${t.templeName}</div>
-    <p><span class="label">Location:</span> ${t.location}</p>
-    <p><span class="label">Dedicated:</span> ${t.dedicated}</p>
-    <p><span class="label">Size:</span> ${Number(t.area).toLocaleString()} sq ft</p>
-  `;
-
-
-    const img = new Image();
-    img.loading = "lazy";
-    img.decoding = "async";
-    img.alt = t.templeName;
-    img.src = t.imageUrl;
-    img.onerror = () => {
-        img.src = "https://placehold.co/800x600?text=Image+Unavailable";
-    };
-
-    fig.append(cap, img);
-    return fig;
-}
-
-
-
-function render(list) {
-    gallery.innerHTML = "";
-    list.forEach((t) => gallery.appendChild(makeCard(t)));
 }
 
 const filters = {
@@ -170,6 +140,70 @@ const textToKey = {
     small: "small",
 };
 
+
+function preloadImage(href) {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = href;
+    document.head.appendChild(link);
+}
+
+
+function makeCard(t, { isLCP = false } = {}) {
+    const fig = document.createElement("figure");
+
+    const cap = document.createElement("figcaption");
+    cap.innerHTML = `
+    <div class="name">${t.templeName}</div>
+    <p><span class="label">Location:</span> ${t.location}</p>
+    <p><span class="label">Dedicated:</span> ${t.dedicated}</p>
+    <p><span class="label">Size:</span> ${Number(t.area).toLocaleString()} sq ft</p>
+  `;
+
+    const img = new Image();
+    img.alt = t.templeName;
+    img.src = t.imageUrl;
+
+    if (isLCP) {
+        img.setAttribute("fetchpriority", "high");
+        img.decoding = "async";
+    } else {
+        img.loading = "lazy";
+        img.decoding = "async";
+    }
+
+
+    img.width = 400;
+    img.height = 250;
+
+    img.onerror = () => {
+        img.src = "https://placehold.co/800x600?text=Image+Unavailable";
+    };
+
+    fig.append(cap, img);
+    return fig;
+}
+
+
+function render(list) {
+    gallery.innerHTML = "";
+    if (!list || list.length === 0) return;
+
+    const lcpItem = list[0];
+    preloadImage(lcpItem.imageUrl);
+    gallery.appendChild(makeCard(lcpItem, { isLCP: true }));
+
+    const rest = list.slice(1);
+    const schedule = window.requestIdleCallback || ((fn) => setTimeout(fn, 0));
+    schedule(() => {
+        const frag = document.createDocumentFragment();
+        for (const t of rest) frag.appendChild(makeCard(t));
+        gallery.appendChild(frag);
+    });
+}
+
+
 navLinks.forEach((a) => {
     a.addEventListener("click", (e) => {
         e.preventDefault();
@@ -179,7 +213,7 @@ navLinks.forEach((a) => {
         const key = textToKey[a.textContent.trim().toLowerCase()] || "home";
         render(temples.filter(filters[key] || filters.home));
 
-
+        // Close mobile menu after selection
         const nav = document.getElementById("primary-nav");
         if (nav && nav.classList.contains("open")) {
             nav.classList.remove("open");
@@ -188,7 +222,6 @@ navLinks.forEach((a) => {
         }
     });
 });
-
 
 document.querySelector(".navigation a")?.classList.add("active");
 render(temples);
@@ -210,9 +243,7 @@ if (menuBtn && primaryNav) {
         setBtnState(false);
     }
 
-   
     setBtnState(primaryNav.classList.contains("open"));
-
 
     menuBtn.addEventListener("click", () => {
         const open = !primaryNav.classList.contains("open");
@@ -220,17 +251,14 @@ if (menuBtn && primaryNav) {
         setBtnState(open);
     });
 
-   
     primaryNav.addEventListener("click", (e) => {
         if (e.target.closest("a")) closeMenu();
     });
 
-    
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeMenu();
     });
 
-    
     mq900.addEventListener("change", (e) => {
         if (e.matches) closeMenu();
     });
