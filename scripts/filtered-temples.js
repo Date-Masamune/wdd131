@@ -149,15 +149,15 @@ function makeCard(t, { isLCP = false } = {}) {
     wrap.className = "img-wrap";
 
     const img = new Image();
-    img.src = t.imageUrl;
+    const { w, h } = inferDims(t.imageUrl);
+    img.height = h;
     img.alt = t.templeName;
     img.decoding = "async";
     img.sizes = "(max-width: 600px) 100vw, 400px";
-    const { w, h } = inferDims(t.imageUrl);
-    img.width = w; img.height = h;
     if (isLCP) { img.setAttribute("fetchpriority", "high"); img.loading = "eager"; }
     else { img.loading = "lazy"; }
     img.onerror = () => { img.src = "https://placehold.co/800x600?text=Image+Unavailable"; };
+    img.src = t.imageUrl;
 
     wrap.appendChild(img);
     fig.append(cap, wrap);
