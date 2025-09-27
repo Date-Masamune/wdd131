@@ -50,9 +50,7 @@ const temples = [
     },
 ];
 
-// =======================
-// Footer year/lastModified
-// =======================
+
 (() => {
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -109,27 +107,25 @@ function makeCard(t, { isLCP = false } = {}) {
     <p><span class="label">Size:</span> ${Number(t.area).toLocaleString()} sq ft</p>
   `;
 
+    const imgWrap = document.createElement("div");
+    imgWrap.className = "img-wrap";
+
     const img = new Image();
-    img.alt = t.templeName;
     img.src = t.imageUrl;
-
-    const { w, h } = inferDims(t.imageUrl);
-    img.width = w;
-    img.height = h;
-
+    img.alt = t.templeName;
     if (isLCP) {
         img.setAttribute("fetchpriority", "high");
-        img.decoding = "async";
     } else {
         img.loading = "lazy";
-        img.decoding = "async";
     }
+    img.decoding = "async";
 
     img.onerror = () => {
         img.src = "https://placehold.co/800x600?text=Image+Unavailable";
     };
 
-    fig.append(cap, img);
+    imgWrap.appendChild(img);
+    fig.append(cap, imgWrap);
     return fig;
 }
 
