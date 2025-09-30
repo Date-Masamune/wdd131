@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Site Plan – Heartland Storm Guide</title>
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="styles/siteplan.css">
+</head>
+
+<body>
+    <header class="wrap">
+        <div class="logo" aria-hidden="true">HSG</div>
+        <div>
+            <h1 class="title">Heartland Storm Guide <span class="tag">Site Plan</span></h1>
+            <p class="subtitle">An informational website for Tornado Alley safety, learning, and simple tools.</p>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <!-- Site Name -->
+        <section class="card" id="site-name">
+            <h2>Site Name</h2>
+            <p><strong>Heartland Storm Guide</strong> – clear, memorable, and relevant to Tornado Alley’s geography and
+                purpose (storm preparedness & education). It communicates both the <em>region</em> (Heartland) and the
+                <em>function</em> (a guide).
+            </p>
+            <p><strong>Optional domain availability:</strong> <code>heartlandstormguide.com</code> / <code>.org</code> /
+                <code>.net</code> (not required for this course; final choice TBD).
+            </p>
+        </section>
+
+        <!-- Site Purpose -->
+        <section class="card" id="site-purpose">
+            <h2>Site Purpose</h2>
+            <p>Provide a friendly, accessible hub for severe-weather literacy and safety in Tornado Alley. The site
+                will:</p>
+            <ul>
+                <li>Explain severe storm basics with concise, visual guides (supercell types, radar signatures, watch vs
+                    warning, go-bag).</li>
+                <li>Offer simple web tools (wind-chill & heat-index calculators; saved “favorite locations” via
+                    <code>localStorage</code>).
+                </li>
+                <li>Enable a client-validated Severe Weather Report form (name, location, hazard type, notes) with a
+                    confirmation message.</li>
+                <li>Model good web practices: responsive layout, strong contrast, semantic HTML, and performance
+                    optimizations (lazy loading, optimized images).</li>
+            </ul>
+        </section>
+
+        <!-- Scenarios -->
+        <section class="card" id="scenarios">
+            <h2>Scenarios (Target Audience Questions)</h2>
+            <ul>
+                <li>“How do I tell an HP from an LP supercell, and why does it matter for safety?”</li>
+                <li>“What’s the difference between a Tornado Watch and a Tornado Warning?”</li>
+                <li>“Can I quickly calculate today’s wind-chill / heat index before heading out?”</li>
+                <li>“Where do I report hail or damaging winds, and what details should I include?”</li>
+            </ul>
+        </section>
+
+        <!-- Color Schema -->
+        <section class="card" id="color-schema">
+            <h2>Color Schema</h2>
+            <p>This document already uses the selected colors. Usage guidelines and CSS variables are defined below.</p>
+            <div class="swatches">
+                <div class="swatch">
+                    <div class="chip bg"></div>
+                    <div class="meta"><strong>Background</strong> — <code>--hsg-bg</code> = <code>#0b1220</code></div>
+                </div>
+                <div class="swatch">
+                    <div class="chip panel"></div>
+                    <div class="meta"><strong>Panels</strong> — <code>--hsg-panel</code> = <code>#0f172a</code></div>
+                </div>
+                <div class="swatch">
+                    <div class="chip primary"></div>
+                    <div class="meta"><strong>Primary / CTA</strong> — <code>--hsg-primary</code> = <code>#f59e0b</code>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="chip accent"></div>
+                    <div class="meta"><strong>Accent / Links</strong> — <code>--hsg-accent</code> = <code>#38bdf8</code>
+                    </div>
+                </div>
+                <div class="swatch">
+                    <div class="chip text"></div>
+                    <div class="meta"><strong>Text</strong> — <code>--hsg-text</code> = <code>#e5e7eb</code></div>
+                </div>
+            </div>
+            <div class="usage" aria-label="color usage examples">
+                <p><strong>Usage:</strong></p>
+                <ul>
+                    <li>Headings & key accents: <code>--hsg-primary</code></li>
+                    <li>Links & interactive focus: <code>--hsg-accent</code></li>
+                    <li>Body text: <code>--hsg-text</code></li>
+                    <li>Panels/cards: <code>--hsg-panel</code> on <code>--hsg-bg</code></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="card" id="typography">
+            <h2>Typography</h2>
+            <ul>
+                <li><strong>Headings:</strong> Oswald (500–600) – condensed, high-impact for titles and section
+                    headings.</li>
+                <li><strong>Body:</strong> Inter (400–700) – modern, readable sans-serif for paragraphs and UI text.
+                </li>
+                <li><strong>Fallbacks:</strong> system UI stack for performance & resilience.</li>
+            </ul>
+            <div class="typography-samples">
+                <h3>Heading Sample – Oswald 600</h3>
+                <p class="sample">The quick brown fox jumps over the lazy dog.</p>
+                <h3 class="accent-heading">UI Label / Emphasis – Inter 700</h3>
+                <p class="sample">Body Sample – Inter 400: Readable at small sizes on dark backgrounds.</p>
+            </div>
+        </section>
+
+        <!-- Wireframes -->
+        <section class="card" id="wireframes">
+            <h2>Wireframe – Home Page Layout</h2>
+            <div class="grid two wireframes">
+                <div class="wf">
+                    <h3>Mobile (≤ 480px)</h3>
+                    <!-- Wireframe sketch -->
+                    <svg viewBox="0 0 360 640" role="img" aria-label="Mobile wireframe of homepage">
+                        <rect x="1" y="1" width="358" height="638" fill="#0f172a" stroke="#334155" />
+                        <rect x="16" y="16" width="328" height="56" fill="#111827" stroke="#475569" />
+                        <text x="28" y="50" fill="#e5e7eb" font-family="Inter" font-size="14">Header / Logo / Nav</text>
+                        <rect x="16" y="88" width="328" height="64" fill="#111827" stroke="#475569" />
+                        <text x="28" y="124" fill="#e5e7eb" font-family="Inter" font-size="14">Mission + CTA</text>
+                        <rect x="16" y="168" width="328" height="120" fill="#111827" stroke="#475569" />
+                        <text x="28" y="200" fill="#e5e7eb" font-family="Inter" font-size="14">Today’s Safety
+                            Highlight</text>
+                        <rect x="16" y="304" width="328" height="140" fill="#111827" stroke="#475569" />
+                        <text x="28" y="336" fill="#e5e7eb" font-family="Inter" font-size="14">Featured Article</text>
+                        <rect x="16" y="460" width="328" height="148" fill="#111827" stroke="#475569" />
+                        <text x="28" y="492" fill="#e5e7eb" font-family="Inter" font-size="14">Tools & Resources
+                            Links</text>
+                    </svg>
+                </div>
+
+                <div class="wf">
+                    <h3>Desktop (≥ 1024px)</h3>
+                    <!-- Wireframe sketch -->
+                    <svg viewBox="0 0 960 540" role="img" aria-label="Desktop wireframe of homepage">
+                        <rect x="1" y="1" width="958" height="538" fill="#0f172a" stroke="#334155" />
+                        <rect x="16" y="16" width="928" height="64" fill="#111827" stroke="#475569" />
+                        <text x="28" y="52" fill="#e5e7eb" font-family="Inter" font-size="16">Header / Logo (left), Nav
+                            (right)</text>
+                        <rect x="16" y="96" width="928" height="96" fill="#111827" stroke="#475569" />
+                        <text x="28" y="140" fill="#e5e7eb" font-family="Inter" font-size="16">Hero: Mission +
+                            CTA</text>
+                        <rect x="16" y="208" width="456" height="160" fill="#111827" stroke="#475569" />
+                        <text x="28" y="244" fill="#e5e7eb" font-family="Inter" font-size="16">Today’s Safety
+                            Highlight</text>
+                        <rect x="488" y="208" width="456" height="160" fill="#111827" stroke="#475569" />
+                        <text x="500" y="244" fill="#e5e7eb" font-family="Inter" font-size="16">Featured Article</text>
+                        <rect x="16" y="384" width="296" height="128" fill="#111827" stroke="#475569" />
+                        <rect x="332" y="384" width="296" height="128" fill="#111827" stroke="#475569" />
+                        <rect x="648" y="384" width="296" height="128" fill="#111827" stroke="#475569" />
+                        <text x="28" y="420" fill="#e5e7eb" font-family="Inter" font-size="16">Tools & Resources</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="card" id="css-notes">
+            <h2>CSS / Design Notes</h2>
+            <ul>
+                <li>Color variables in <code>:root</code> ensure consistency across pages; dark theme supports nighttime
+                    readability.</li>
+                <li>Headings (Oswald) provide strong visual hierarchy; body text (Inter) optimizes readability.</li>
+                <li>Components use rounded corners and subtle borders for separation without reducing contrast.</li>
+                <li>Responsive grid: single column on mobile, two columns or more on larger screens.</li>
+            </ul>
+        </section>
+
+
+
+        <footer class="wrap">
+            <p>© <span id="year"></span> Heartland Storm Guide · <a href="#">references.html</a> (to be added to live
+                site)</p>
+        </footer>
+    </main>
+
+    <script>
+        document
