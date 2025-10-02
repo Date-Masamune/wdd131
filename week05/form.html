@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jacob Gishwiller">
+    <meta name="description" content="This is the Product Review Form for WDD 131">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <form method="get" action="review.html" class="fw1">
+
+        <fieldset>
+            <legend>Product Name</legend>
+            <option value="">Choose a Product</option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+        </fieldset>
+
+        <fieldset>
+            <legend>Overall Rating</legend>
+            <label><input type="radio" name="rating" value="beginner">Beginner</label>
+            <label><input type="radio" name="rating" value="intermediate">Intermediate</label>
+            <label><input type="radio" name="rating" value="advanced">Advanced</label>
+            <label><input type="radio" name="rating" value="advanced">Advanced</label>
+            <label><input type="radio" name="rating" value="advanced">Advanced</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Date of Installation</legend>
+            <label><input type="date" name="installation date"></label>
+        </fieldset>
+
+        <div>What features did you find useful in the product?
+            (Check all that apply)
+        </div>
+        <label><input type="checkbox" name="editing" value="yes">Durability</label>
+        <label><input type="checkbox" name="code" value="yes">Ease of Use</label>
+        <label><input type="checkbox" name="process" value="yes">Performace</label>
+        <label><input type="checkbox" name="client" value="yes">Design</label>
+
+
+        <fieldset>
+            <legend>Wrtitten Review (Optional)</legend>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your Name (Optional)</legend>
+        </fieldset>
+
+        <input type="submit" value="Post Review">
+    </form>
+    <footer>
+        <p>© <span id="year"></span> Jacob Gishwiller Utah, USA</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
