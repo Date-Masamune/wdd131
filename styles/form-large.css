@@ -1,0 +1,15 @@
+
+.form-card {
+    padding: 1.5rem 2rem;
+    gap: 1.25rem;
+}
+
+.checks {
+    grid-template-columns: 1fr 1fr;
+}
+
+.actions .btn {
+    max-width: 320px;
+    margin-inline: auto;
+    display: block;
+}
