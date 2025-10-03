@@ -5,9 +5,11 @@
     --muted: #6b6b6b;
     --accent: #264653;
     --accent-ink: #fff;
-    --border: rgba(0, 0, 0, .1);
+    --border: rgba(0, 0, 0, .12);
     --radius: 14px;
     --gap: 1rem;
+    --star-empty: #222;
+    --star-fill: #ffbf00;
 }
 
 * {
@@ -26,22 +28,23 @@ body {
     background: var(--bg);
 }
 
+
 .site-header {
     background: var(--accent);
     color: var(--accent-ink);
-    padding: 1.25rem 1rem;
     text-align: center;
+    padding: 1.25rem 1rem;
 }
 
 .site-header h1 {
-    margin: 0;
-    letter-spacing: .3px
+    margin: 0
 }
+
 
 .container {
     max-width: 820px;
     margin-inline: auto;
-    padding: 1rem;
+    padding: 1rem
 }
 
 .form-card {
@@ -56,23 +59,24 @@ body {
 fieldset {
     border: 0;
     margin: 0;
-    padding: 0;
+    padding: 0
 }
 
 legend {
     font-weight: 700;
-    margin-bottom: .5rem;
+    margin-bottom: .5rem
 }
 
 .hint {
     font-weight: 400;
     font-size: .9rem;
-    color: var(--muted);
+    color: var(--muted)
 }
 
 label {
     display: inline-block
 }
+
 
 input[type="text"],
 input[type="date"],
@@ -90,16 +94,18 @@ textarea {
     resize: vertical
 }
 
+
 .checks {
     display: grid;
-    gap: .5rem;
+    gap: .5rem
 }
 
 .check {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: .5rem
 }
+
 
 .actions {
     margin-top: .25rem
@@ -123,11 +129,14 @@ textarea {
 .stars {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: .25rem;
+    width: fit-content;
+    margin-top: .25rem;
 }
 
 .stars input {
+
     position: absolute;
     width: 1px;
     height: 1px;
@@ -147,7 +156,7 @@ textarea {
     line-height: 1;
     cursor: pointer;
     user-select: none;
-    color: #bbb;
+    color: var(--star-empty);
 
 }
 
@@ -155,6 +164,8 @@ textarea {
 .stars label::before {
     content: "☆";
     font-size: 2rem;
+    color: var(--star-empty);
+
 }
 
 
@@ -163,14 +174,18 @@ textarea {
 .stars input:focus-visible+label::before,
 .stars input:focus-visible+label~label::before {
     content: "★";
-    color: gold;
+    color: var(--star-fill);
+
 }
+
 
 .stars input:checked+label::before,
 .stars input:checked+label~label::before {
     content: "★";
-    color: gold;
+    color: var(--star-fill);
+
 }
+
 
 .site-footer {
     margin-top: 2rem;
