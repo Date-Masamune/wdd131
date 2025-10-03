@@ -7,7 +7,9 @@
     <meta name="description" content="WDD 131 – Product Review Form" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Product Review</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/form.css">
     <link rel="stylesheet" href="styles/form-large.css" media="(min-width: 720px)">
     <script src="scripts/form.js" defer></script>
@@ -20,51 +22,39 @@
 
     <main class="container">
         <form class="form-card" method="get" action="review.html">
-            <!-- PRODUCT -->
             <fieldset>
                 <legend>Product Name</legend>
                 <label for="product" class="sr">Product</label>
                 <select id="product" name="product" required>
                     <option value="" disabled selected>Select a Product …</option>
-                    <!-- options injected by JS -->
                 </select>
             </fieldset>
 
-            <!-- RATING -->
             <fieldset>
                 <legend>Overall Rating</legend>
                 <div class="stars" aria-label="Overall rating from 1 to 5">
-                    <!-- order 5→1 + row-reverse = left→right fill -->
                     <input type="radio" id="star5" name="rating" value="5" required>
                     <label for="star5" aria-label="5 out of 5"></label>
-
                     <input type="radio" id="star4" name="rating" value="4" required>
                     <label for="star4" aria-label="4 out of 5"></label>
-
                     <input type="radio" id="star3" name="rating" value="3" required>
                     <label for="star3" aria-label="3 out of 5"></label>
-
                     <input type="radio" id="star2" name="rating" value="2" required>
                     <label for="star2" aria-label="2 out of 5"></label>
-
                     <input type="radio" id="star1" name="rating" value="1" required>
                     <label for="star1" aria-label="1 out of 5"></label>
                 </div>
             </fieldset>
 
-            <!-- DATE -->
             <fieldset>
                 <legend>Date of Installation</legend>
                 <label for="installDate" class="sr">Installation Date</label>
                 <input id="installDate" name="installDate" type="date" required>
             </fieldset>
 
-         
             <fieldset>
-                <legend>Which features did you find useful in the product?
-                    <span class="hint">(Check all that apply)</span>
-                </legend>
-
+                <legend>Which features did you find useful in the product? <span class="hint">(Check all that
+                        apply)</span></legend>
                 <div class="checks">
                     <div class="check">
                         <input type="checkbox" id="feat-durability" name="features" value="Durability">
@@ -85,14 +75,12 @@
                 </div>
             </fieldset>
 
-           
             <fieldset>
                 <legend>Written Review <span class="hint">(Optional)</span></legend>
                 <label for="review" class="sr">Written Review</label>
                 <textarea id="review" name="review" rows="6" placeholder="Share your experience…"></textarea>
             </fieldset>
 
-            <!-- NAME -->
             <fieldset>
                 <legend>Your Name <span class="hint">(Optional)</span></legend>
                 <label for="username" class="sr">Your Name</label>

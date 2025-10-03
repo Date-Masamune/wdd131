@@ -1,4 +1,3 @@
-
 const products = [
     { id: "fc-1888", name: "Flux Capacitor" },
     { id: "pl-2050", name: "Power Laces" },
@@ -15,23 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (select) {
         products.forEach(p => {
             const opt = document.createElement("option");
-            opt.value = p.id;         
-            opt.textContent = p.name; 
+            opt.value = p.id;
+            opt.textContent = p.name;
             select.appendChild(opt);
         });
     }
-
-    // Footer year + modified
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
-
     const modEl = document.getElementById("lastModified");
     if (modEl) {
         const dt = new Date(document.lastModified);
-        modEl.textContent = `Last Modification: ${dt.toLocaleString(undefined, {
-            year: 'numeric', month: '2-digit', day: '2-digit',
-            hour: '2-digit', minute: '2-digit', second: '2-digit'
-        })
-            }`;
+        modEl.textContent = `Last Modification: ${dt.toLocaleString(undefined, { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit" })}`;
     }
 });
