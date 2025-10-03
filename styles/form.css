@@ -4,7 +4,7 @@
     --ink: #1f1f1f;
     --muted: #6b6b6b;
     --accent: #264653;
-    --accent-ink: #fff;
+    --accent-ink: #ffffff;
     --border: rgba(0, 0, 0, .12);
     --radius: 14px;
     --gap: 1rem;
@@ -114,15 +114,16 @@ textarea {
 .btn {
     width: 100%;
     padding: .9rem 1rem;
-    border: 1px solid var(--border);
+    border: none;
     border-radius: .8rem;
-    background: #eee;
+    background: var(--accent);
+    color: var(--accent-ink);
     font-weight: 700;
     cursor: pointer;
 }
 
 .btn:hover {
-    filter: brightness(.98)
+    filter: brightness(.95)
 }
 
 
